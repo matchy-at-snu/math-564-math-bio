@@ -1,7 +1,8 @@
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-.ipynb_checkpoints
 
-# pdfs generated from existing .tex/.ipynb files
+# Build / Compilation genearted cache
+.ipynb_checkpoints
+__pycache__
+.py[cod]
+
+# Notes generated from existing .tex/.ipynb
 *.pdf
