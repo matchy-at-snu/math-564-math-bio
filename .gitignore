@@ -1,0 +1,7 @@
+# Build / Compilation genearted cache
+.ipynb_checkpoints
+__pycache__
+.py[cod]
+
+# Notes generated from existing .tex/.ipynb
+*.pdf
