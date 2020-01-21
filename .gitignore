@@ -4,5 +4,9 @@
 __pycache__
 .py[cod]
 
-# Notes generated from existing .tex/.ipynb
+# LaTeX-workshop auxillary files
+*.aux
+*.log
+
+# Homework/notes generated from existing .tex/.ipynb
 *.pdf
