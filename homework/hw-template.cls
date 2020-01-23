@@ -8,6 +8,7 @@
 % TODO:
 % [ ] algorithm / codeblock support
 % [ ] put to TeXLive tempalte path (do some research)
+% [ ] issue with comaptibility b/w MATH383 & MATH564 template
 
 % ---------------------------------------------------------------------------- %
 
@@ -15,7 +16,6 @@
 \LoadClass{article}
 
 \RequirePackage{xkeyval}
-% \RequirePackage{l3packages}
 
 %
 % Homework Details
