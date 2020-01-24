@@ -60,8 +60,6 @@
 \ExecuteOptionsX{hw, due, teacher}
 \ProcessOptionsX
 
-% \regex_extract_once:nnN {(.*?):}{\hmwkClassFull} \hmwkClass
-
 % For making headers
 \RequirePackage{fancyhdr}
 \RequirePackage{extramarks}
@@ -118,24 +116,14 @@
 }%
 
 \newcommand{\enterProblemHeader}[1]{
-    \IsInteger{#1}{
-        \nobreak\extramarks{}{Problem #1 continued on next page\ldots}\nobreak{}
-        \nobreak\extramarks{Problem #1 (continued)}{Problem #1 continued on next page\ldots}\nobreak{}
-    }{
-        \nobreak\extramarks{}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
-        \nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
-    }
+    \nobreak\extramarks{}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+    \nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
 }
 
 \newcommand{\exitProblemHeader}[1]{
-    \IsInteger{#1}{
-        \nobreak\extramarks{Problem #1 (continued)}{Problem #1 continued on next page\ldots}\nobreak{}
-        \nobreak\extramarks{Problem #1}{}\nobreak{}
-    }{
-        \nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
-        \stepcounter{#1}
-        \nobreak\extramarks{Problem \arabic{#1}}{}\nobreak{}
-    }
+    \nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+    \stepcounter{#1}
+    \nobreak\extramarks{Problem \arabic{#1}}{}\nobreak{}
 }
 
 \setcounter{secnumdepth}{0}
@@ -147,17 +135,17 @@
 \RequirePackage{xparse}
 \ExplSyntaxOn
     \NewDocumentEnvironment{homeworkProblem} { o }
-     {
-        \IfNoValueTF{#1} {}{\setcounter{homeworkProblemCounter}{#1}}
-        \section{Problem \arabic{homeworkProblemCounter}}
+    {
+        \IsInteger{#1} {\setcounter{homeworkProblemCounter}{#1}}{}
+        \section{Problem\ \arabic{homeworkProblemCounter}}
         \setcounter{partCounter}{1}
-        \IfNoValueTF{#1} {}{\setcounter{homeworkProblemCounter}{#1}}
+        \IsInteger{#1} {\setcounter{homeworkProblemCounter}{#1}}{}
         \enterProblemHeader{homeworkProblemCounter}
-     }
-     {
+    }
+    {
         % \IfNoValueTF{#1} {}{\exitProblemHeader{#1}}
         \exitProblemHeader{homeworkProblemCounter}
-     }
+    }
 \ExplSyntaxOff
 
 %
