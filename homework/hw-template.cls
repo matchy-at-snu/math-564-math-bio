@@ -16,7 +16,7 @@
 \LoadClass{article}
 
 \RequirePackage{xkeyval}
-
+\RequirePackage{xparse}
 %
 % Homework Details
 %   - Title
@@ -32,6 +32,7 @@
 \def\hmwkClassName{TEST}
 \def\hmwkClassInstructor{Professor Unknown}
 \def\hmwkAuthorName{Foo Bar}
+\def\hmwkAuthorShort{Foo}
 
 \define@key{hw-template.cls}{hw}[0]{
     \def\hmwkTitle{Homework \##1}
@@ -57,6 +58,10 @@
     \def\hmwkAuthorName{#1}
 }
 
+\define@key{hw-template.cls}{authorshort}[]{
+    \def\hmwkAuthorShort{#1}
+}
+
 \ExecuteOptionsX{hw, due, teacher}
 \ProcessOptionsX
 
@@ -75,6 +80,9 @@
 % For changing the enumerate style
 \RequirePackage{enumitem}
 
+% For better column formatting
+\RequirePackage{multicol}
+
 \everymath{\displaystyle}
 
 %
@@ -90,7 +98,11 @@
 \linespread{1.1}
 
 \pagestyle{fancy}
-\lhead{\hmwkAuthorName}
+\IfNoValueTF{\hmwkAuthorShort}{
+    \lhead{\hmwkAuthorName}
+}{
+    \lhead{\hmwkAuthorShort}
+}
 \chead{\hmwkClassNumber:\ (\hmwkClassInstructor): \hmwkTitle}
 \rhead{\firstxmark}
 \lfoot{\lastxmark}
@@ -132,12 +144,14 @@
 \setcounter{homeworkProblemCounter}{1}
 \nobreak\extramarks{Problem \arabic{homeworkProblemCounter}}{}\nobreak{}
 
-\RequirePackage{xparse}
 \ExplSyntaxOn
-    \NewDocumentEnvironment{homeworkProblem} { o }
+    \NewDocumentEnvironment{homeworkProblem} { oo }
     {
         \IsInteger{#1} {\setcounter{homeworkProblemCounter}{#1}}{}
-        \section{Problem\ \arabic{homeworkProblemCounter}}
+
+        \IfNoValueTF{#2}{\section{Problem\ \arabic{homeworkProblemCounter}}}{
+            \section{Problem\ \arabic{homeworkProblemCounter}:\ \textnormal{\textit{#2}}}
+        }
         \setcounter{partCounter}{1}
         \IsInteger{#1} {\setcounter{homeworkProblemCounter}{#1}}{}
         \enterProblemHeader{homeworkProblemCounter}
@@ -189,6 +203,8 @@
 % For differentials
 \newcommand{\dx}{\mathrm{d}x}
 \newcommand{\dy}{\mathrm{d}y}
+
+
 
 \AtBeginDocument{%
     \maketitle
