@@ -7,6 +7,9 @@ __pycache__
 # LaTeX-workshop auxillary files
 *.aux
 *.log
+*.synctex.gz
+*.fdb_latexmk
+*.fls
 
 # Homework/notes generated from existing .tex/.ipynb
 *.pdf
