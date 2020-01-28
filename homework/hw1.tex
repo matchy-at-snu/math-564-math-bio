@@ -275,10 +275,11 @@ sketch the solutions:
 
     \pagebreak
     % Solution 3(b)
-    \item \begin{enumerate}[label=(\roman*)]
+    \item Note: the constants $A_1$ and $A_2$ are se as $1$ for both questions.
+    \begin{enumerate}[label=(\roman*)]
     \addtocounter{enumii}{1}
     % Solution 3(b)(ii)
-        \item The characterictic equation is \[
+        \item The characteristic equation is \[
             \lambda^2 - 2\lambda + 1 = 0.
         \]
         So the roots should be $\lambda_1 = \lambda_2 = \lambda = 1$.
@@ -291,8 +292,35 @@ sketch the solutions:
         \end{Figure}
 
     % Solution 3(b)(iii)
-        \item \colorbox{red}{UNSOLVED}
-        \requiregraph
+        \item The system of linear difference equation can be written in matrix form: \[
+            \left(\begin{matrix}A_1\lambda^{n+1}\\ A_2\lambda^{n+1}\end{matrix}\right)
+            = \left(\begin{matrix}
+                -3 & -2 \\
+                 2 &  1
+            \end{matrix}\right)
+            \left(\begin{matrix}A_1\lambda^n \\ A_2 \lambda^n \end{matrix}\right)
+        \qquad \Leftrightarrow \qquad
+            \left(\begin{matrix}
+                -3-\lambda & -2 \\
+                 2 &  1-\lambda
+            \end{matrix}\right) \left(\begin{matrix}A\\B\end{matrix}\right)
+            = 0
+        \]
+        Let determinant of the matrix of coefficients euqal to $0$, it leads to \[
+            \mathbf{det}\left(\begin{matrix}
+                -3-\lambda & -2 \\
+                 2 &  1-\lambda
+            \end{matrix}\right) = 0 \qquad \Rightarrow \qquad
+            \lambda^2 + 2\lambda + 1 = 0
+        \]
+        So we hanve two repeated eigenvalues $\lambda_1 = \lambda_2 = \lambda = -1$. And the
+        general solution would be \[
+            x_n = (A_1 + A_2 n) (-1)^n,
+        \]
+        \begin{Figure}
+            \centering
+            \includegraphics[scale=0.5]{media/hw1/fig3(b)(iii).pdf}
+        \end{Figure}
     \end{enumerate}
 \end{enumerate}
 \end{homeworkProblem}
@@ -895,7 +923,25 @@ and Naughton, 1998).
 \end{enumerate}% end 18(c)
 
 % Solution 18(d)
-\item \colorbox{red}{UNSOLVED}
+\item For now the ventilation rate is proportional to blood $CO_2$
+concentration. In real biological systems, body will likely adjust the rate of
+breath according to $C_n$, just like the relationship between air friction and
+velocity. It's suitable to suppose that \[
+    \mathcal{S}(C_n) = \alpha C_n^2
+\]
+Then the equation will turn into \[
+    \begin{aligned}
+    &C_{n+1} = C_n - \alpha \beta C_{n-1}^2 + m
+    &C_{n+1} - C_n + \alpha \beta C_{n-1}^2 = m
+    \end{aligned}
+\]
+Suppose $C_{n+1}=C_n$, then we can derive a steady-state where \[
+    C_n = \sqrt{\frac{m}{\alpha\beta}}
+\]
+It would also be interesting to think about the equilibrium shifting between
+bicarbonates and $CO_2$ and the formation of carbaminohemoglobin($HbCO_2$).
+But deriving a nice math equation with respect to these factors is out of our
+ability.
 
 \end{enumerate}
 \end{homeworkProblem}
