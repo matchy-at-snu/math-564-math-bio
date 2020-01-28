@@ -1,8 +1,11 @@
 
 # Build / Compilation genearted cache
+# python
 .ipynb_checkpoints
 __pycache__
 .py[cod]
+# latex
+_minted-*
 
 # LaTeX-workshop auxillary files
 *.aux
@@ -12,4 +15,5 @@ __pycache__
 *.fls
 
 # Homework/notes generated from existing .tex/.ipynb
-*.pdf
+H*.pdf
+M*.pdf
