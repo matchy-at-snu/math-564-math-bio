@@ -77,11 +77,44 @@
 % For drawing picture
 \RequirePackage{tikz}
 
+% For inserting svg
+\RequirePackage{svg}
+
 % For changing the enumerate style
 \RequirePackage{enumitem}
 
 % For better column formatting
 \RequirePackage{multicol}
+
+% For creating fancy tables
+\RequirePackage{booktabs} 
+
+% For fancy code blocks with syntax highlighting
+\RequirePackage[newfloat]{minted} 
+
+% -----------------------------------------------------------------------------%
+
+%
+% Configure Package Settings
+%
+
+% Set up code highlighting style
+\usemintedstyle{xcode} % Light
+% \usemintedstyle{native} <- Nice dark theme
+% \usemintedstyle{monokai} <- Not bad dark theme
+
+\RequirePackage{tcolorbox}
+\RequirePackage{etoolbox}
+
+
+% Background color designed for dart highlighting style
+\definecolor{bg}{HTML}{282828}
+
+
+\SetupFloatingEnvironment{listing}{name=Code Block} % Rename the label for listing
+% Can set it to Code Block, if wanted to
+
+\usetikzlibrary{automata,positioning}
 
 \everymath{\displaystyle}
 
