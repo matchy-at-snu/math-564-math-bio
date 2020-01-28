@@ -8,6 +8,7 @@
 % TODO:
 % [ ] algorithm / codeblock support
 % [ ] put to TeXLive tempalte path (do some research)
+% [ ] issue with comaptibility b/w MATH383 & MATH564 template
 
 % ---------------------------------------------------------------------------- %
 
@@ -15,8 +16,7 @@
 \LoadClass{article}
 
 \RequirePackage{xkeyval}
-% \RequirePackage{l3packages}
-
+\RequirePackage{xparse}
 %
 % Homework Details
 %   - Title
@@ -32,6 +32,7 @@
 \def\hmwkClassName{TEST}
 \def\hmwkClassInstructor{Professor Unknown}
 \def\hmwkAuthorName{Foo Bar}
+\def\hmwkAuthorShort{Foo}
 
 \define@key{hw-template.cls}{hw}[0]{
     \def\hmwkTitle{Homework \##1}
@@ -57,10 +58,12 @@
     \def\hmwkAuthorName{#1}
 }
 
+\define@key{hw-template.cls}{authorshort}[]{
+    \def\hmwkAuthorShort{#1}
+}
+
 \ExecuteOptionsX{hw, due, teacher}
 \ProcessOptionsX
-
-% \regex_extract_once:nnN {(.*?):}{\hmwkClassFull} \hmwkClass
 
 % For making headers
 \RequirePackage{fancyhdr}
@@ -74,8 +77,44 @@
 % For drawing picture
 \RequirePackage{tikz}
 
+% For inserting svg
+\RequirePackage{svg}
+
 % For changing the enumerate style
 \RequirePackage{enumitem}
+
+% For better column formatting
+\RequirePackage{multicol}
+
+% For creating fancy tables
+\RequirePackage{booktabs} 
+
+% For fancy code blocks with syntax highlighting
+\RequirePackage[newfloat]{minted} 
+
+% -----------------------------------------------------------------------------%
+
+%
+% Configure Package Settings
+%
+
+% Set up code highlighting style
+\usemintedstyle{xcode} % Light
+% \usemintedstyle{native} <- Nice dark theme
+% \usemintedstyle{monokai} <- Not bad dark theme
+
+\RequirePackage{tcolorbox}
+\RequirePackage{etoolbox}
+
+
+% Background color designed for dart highlighting style
+\definecolor{bg}{HTML}{282828}
+
+
+\SetupFloatingEnvironment{listing}{name=Code Block} % Rename the label for listing
+% Can set it to Code Block, if wanted to
+
+\usetikzlibrary{automata,positioning}
 
 \everymath{\displaystyle}
 
@@ -92,7 +131,12 @@
 \linespread{1.1}
 
 \pagestyle{fancy}
-\lhead{\hmwkAuthorName}
+
+\IfNoValueTF{\hmwkAuthorShort}{
+    \lhead{\hmwkAuthorName}
+}{
+    \lhead{\hmwkAuthorShort}
+}
 \chead{\hmwkClassNumber:\ (\hmwkClassInstructor): \hmwkTitle}
 \rhead{\firstxmark}
 \lfoot{\lastxmark}
@@ -118,24 +162,14 @@
 }%
 
 \newcommand{\enterProblemHeader}[1]{
-    \IsInteger{#1}{
-        \nobreak\extramarks{}{Problem #1 continued on next page\ldots}\nobreak{}
-        \nobreak\extramarks{Problem #1 (continued)}{Problem #1 continued on next page\ldots}\nobreak{}
-    }{
-        \nobreak\extramarks{}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
-        \nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
-    }
+    \nobreak\extramarks{}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+    \nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
 }
 
 \newcommand{\exitProblemHeader}[1]{
-    \IsInteger{#1}{
-        \nobreak\extramarks{Problem #1 (continued)}{Problem #1 continued on next page\ldots}\nobreak{}
-        \nobreak\extramarks{Problem #1}{}\nobreak{}
-    }{
-        \nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
-        \stepcounter{#1}
-        \nobreak\extramarks{Problem \arabic{#1}}{}\nobreak{}
-    }
+    \nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+    \stepcounter{#1}
+    \nobreak\extramarks{Problem \arabic{#1}}{}\nobreak{}
 }
 
 \setcounter{secnumdepth}{0}
@@ -144,20 +178,22 @@
 \setcounter{homeworkProblemCounter}{1}
 \nobreak\extramarks{Problem \arabic{homeworkProblemCounter}}{}\nobreak{}
 
-\RequirePackage{xparse}
 \ExplSyntaxOn
-    \NewDocumentEnvironment{homeworkProblem} { o }
-     {
-        \IfNoValueTF{#1} {}{\setcounter{homeworkProblemCounter}{#1}}
-        \section{Problem \arabic{homeworkProblemCounter}}
+    \NewDocumentEnvironment{homeworkProblem} { oo }
+    {
+        \IsInteger{#1} {\setcounter{homeworkProblemCounter}{#1}}{}
+
+        \IfNoValueTF{#2}{\section{Problem\ \arabic{homeworkProblemCounter}}}{
+            \section{Problem\ \arabic{homeworkProblemCounter}:\ \textnormal{\textit{#2}}}
+        }
         \setcounter{partCounter}{1}
-        \IfNoValueTF{#1} {}{\setcounter{homeworkProblemCounter}{#1}}
+        \IsInteger{#1} {\setcounter{homeworkProblemCounter}{#1}}{}
         \enterProblemHeader{homeworkProblemCounter}
-     }
-     {
+    }
+    {
         % \IfNoValueTF{#1} {}{\exitProblemHeader{#1}}
         \exitProblemHeader{homeworkProblemCounter}
-     }
+    }
 \ExplSyntaxOff
 
 %
