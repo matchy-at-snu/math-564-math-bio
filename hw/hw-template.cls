@@ -6,9 +6,7 @@
 
 %
 % TODO:
-% [ ] algorithm / codeblock support
 % [ ] put to TeXLive tempalte path (do some research)
-% [ ] issue with comaptibility b/w MATH383 & MATH564 template
 
 % ---------------------------------------------------------------------------- %
 
@@ -87,10 +85,10 @@
 \RequirePackage{multicol}
 
 % For creating fancy tables
-\RequirePackage{booktabs} 
+\RequirePackage{booktabs}
 
 % For fancy code blocks with syntax highlighting
-\RequirePackage[newfloat]{minted} 
+\RequirePackage[newfloat]{minted}
 
 % -----------------------------------------------------------------------------%
 
