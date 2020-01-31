@@ -13,8 +13,14 @@
 % Load Parent Class
 \LoadClass{article}
 
+%
+% LaTeX 3 project packages
+%
+% Better command/environment specification
 \RequirePackage{xkeyval}
-\RequirePackage{xparse}
+\RequirePackage{xparse}  % command/environment
+\RequirePackage{xcolor}  % color
+
 %
 % Homework Details
 %   - Title
