@@ -1,4 +1,4 @@
-%hw-template.cls
+%../hw-template.cls
 \ProvidesClass{hw-template}
 [2020/01/17 v1.0 General Purpose Homework Template]
 
@@ -7,6 +7,7 @@
 %
 % TODO:
 % [ ] put to TeXLive tempalte path (do some research)
+% [ ] figure a better way to decalre options
 
 % ---------------------------------------------------------------------------- %
 
@@ -25,9 +26,11 @@
 % Homework Details
 %   - Title
 %   - Due date
-%   - Class
+%   - Class Name
+%   - Class Number
 %   - Instructor
-%   - Author
+%   - Author Nmae
+%   - Author Short (for groupwork)
 %
 
 \def\hmwkTitle{Homework}
@@ -38,35 +41,34 @@
 \def\hmwkAuthorName{Foo Bar}
 \def\hmwkAuthorShort{Foo}
 
-\define@key{hw-template.cls}{hw}[0]{
+\define@key{../hw-template.cls}{hw}[0]{
     \def\hmwkTitle{Homework \##1}
 }
 
-\define@key{hw-template.cls}{due}[\today]{
+\define@key{../hw-template.cls}{due}[\today]{
     \def\hmwkDueDate{#1}
 }
 
-\define@key{hw-template.cls}{classnum}[ABCD1234.56]{
+\define@key{../hw-template.cls}{classnum}[ABCD1234.56]{
     \def\hmwkClassNumber{#1}
 }
 
-\define@key{hw-template.cls}{classname}[TEST]{
+\define@key{../hw-template.cls}{classname}[TEST]{
     \def\hmwkClassName{#1}
 }
 
-\define@key{hw-template.cls}{teacher}[Unknown]{
+\define@key{../hw-template.cls}{teacher}[Unknown]{
     \def\hmwkClassInstructor{Professor #1}
 }
 
-\define@key{hw-template.cls}{author}[]{
+\define@key{../hw-template.cls}{author}[]{
     \def\hmwkAuthorName{#1}
 }
 
-\define@key{hw-template.cls}{authorshort}[]{
+\define@key{../hw-template.cls}{authorshort}[]{
     \def\hmwkAuthorShort{#1}
 }
 
-\ExecuteOptionsX{hw, due, teacher}
 \ProcessOptionsX
 
 % For making headers
@@ -81,14 +83,14 @@
 % For drawing picture
 \RequirePackage{tikz}
 
-% For inserting svg
-\RequirePackage{svg}
-
 % For changing the enumerate style
 \RequirePackage{enumitem}
 
 % For better column formatting
 \RequirePackage{multicol}
+
+% Make inserting images in multicols environment availabe
+\RequirePackage{float}
 
 % For creating fancy tables
 \RequirePackage{booktabs}
