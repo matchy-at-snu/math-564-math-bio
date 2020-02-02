@@ -10,11 +10,11 @@ math-bio
 │  hw-template.cls -----------------template
 │  new_probs.ps1 -------------------powershell script, auto-create hw folder
 │  README.md
-│  
+│
 ├─hw1 ------------------------------homework directories
 │  │  hw1.pdf ----------------------compiled pdf
 │  │  hw1.tex ----------------------.tex source file
-│  │  hw1_plot.py ------------------python script for plotting  
+│  │  hw1_plot.py ------------------python script for plotting
 │  ├─sections ----------------------subfiles corresponding to hw problems
 │  │      prob1.tex
 │  │      prob2.tex
@@ -26,23 +26,18 @@ math-bio
 └─...
 ```
 
-The multiple `.tex` files are compiled into 1 using pacakge `subfile`.
+The multiple `.tex` files are compiled into 1 using package `subfile`.
 Within each `hw[0-9]` directory, there will be a `fig` folder storing all the figures,
-a `sections` folder containing all the subfiles 
+a `sections` folder containing all the subfiles
 
 ## Brief LaTeX reference
 
 ### Two modes in latex that can typeset the formulations
 
-1. **Inline mode**, start with an `$`, end with an `$` (`$...$`). E.g. ![a + b = \frac{1}{3}](https://render.githubusercontent.com/render/math?math=a%20%2B%20b%20%3D%20%5Cfrac%7B1%7D%7B3%7D)
-2. **Display mode**, start with two `$$`, end with two `$$` (`$$...$$`), or  E.g. 
+1. **Inline mode**, start with an `$`, end with an `$` (`$...$`). 
+2. **Display mode**, start with two `$$`, end with two `$$` (`$$...$$`)
 
-<div style="text-align:center">
-<img src="https://render.githubusercontent.com/render/math?math=a%20%2B%20b%20%3D%20%5Cfrac%7B1%7D%7B3%7D">
-</div>
-<br>
-
-The `\(...\)` and `\[...\]` can also start inline mode math and display mode math, respectively. We recommend using `$...$` for inline mode delimiter and `\[...\]` for displaymode delimiter, for clearer distinction.
+ `\(...\)` and `\[...\]` can also start inline mode math and display mode math, respectively. We recommend using `$...$` for inline mode delimiter and `\[...\]` for displaymode delimiter, for clearer distinction.
 
 ### Basic Maths
 
@@ -68,7 +63,12 @@ The `\(...\)` and `\[...\]` can also start inline mode math and display mode mat
 A useful environment for aligning equations. Used inside a display mode math snippet.
 
 ```latex
-
+$$
+\begin{aligned}
+    y &= x^2 + 3x + 2 \\
+    &= (x+1)(x+2)
+\end{aligned}
+$$
 ```
 
 Effect:
@@ -80,5 +80,5 @@ Effect:
 
 |                    | code                                                         | effect                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | ------------------ | ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| differentiate      | `\deriv{y}`, <br> `\deriv[t]{N}`, <br>`\derivlong{x^2+3x+2}` | ![\frac{\mathrm{d}y}{\mathrm{d}x}](https://render.githubusercontent.com/render/math?math=%5Cfrac%7B%5Cmathrm%7Bd%7Dy%7D%7B%5Cmathrm%7Bd%7Dx%7D),<br>![\frac{\mathrm{d}N}{\mathrm{d}t}](https://render.githubusercontent.com/render/math?math=%5Cfrac%7B%5Cmathrm%7Bd%7DN%7D%7B%5Cmathrm%7Bd%7Dt%7D),<br>![\frac{\mathrm{d}}{\mathrm{d}x}(x^2+3x+2)](https://render.githubusercontent.com/render/math?math=%5Cfrac%7B%5Cmathrm%7Bd%7D%7D%7B%5Cmathrm%7Bd%7Dx%7D(x%5E2%2B3x%2B2)) |
+| derivative      | `\deriv{y}`, <br> `\deriv[t]{N}`, <br>`\derivlong{x^2+3x+2}` | ![\frac{\mathrm{d}y}{\mathrm{d}x}](https://render.githubusercontent.com/render/math?math=%5Cfrac%7B%5Cmathrm%7Bd%7Dy%7D%7B%5Cmathrm%7Bd%7Dx%7D),<br>![\frac{\mathrm{d}N}{\mathrm{d}t}](https://render.githubusercontent.com/render/math?math=%5Cfrac%7B%5Cmathrm%7Bd%7DN%7D%7B%5Cmathrm%7Bd%7Dt%7D),<br>![\frac{\mathrm{d}}{\mathrm{d}x}(x^2+3x+2)](https://render.githubusercontent.com/render/math?math=%5Cfrac%7B%5Cmathrm%7Bd%7D%7D%7B%5Cmathrm%7Bd%7Dx%7D(x%5E2%2B3x%2B2)) |
 | partial derivative | `\pderiv{f}{x}`, <br><br>`\pderivlong{x^2+3x+2}{x}`          | ![\frac{\partial f}{\partial x}](https://render.githubusercontent.com/render/math?math=%5Cfrac%7B%5Cpartial%20f%7D%7B%5Cpartial%20x%7D), <br>![\frac{\partial}{\partial x}(x^2 + 3x + 2)](https://render.githubusercontent.com/render/math?math=%5Cfrac%7B%5Cpartial%7D%7B%5Cpartial%20x%7D(x%5E2%20%2B%203x%20%2B%202))                                                                                                                                                        |
