@@ -51,8 +51,6 @@ The `\(...\)` and `\[...\]` can also start inline mode math and display mode mat
 
 ### Useful symbols and functions
 
-
-
 |                               | code                                                              | effect                                                                                                                                                                                                                                      |
 | ----------------------------- | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | fraction                      | `\frac{1}{3}`                                                     | ![\frac{1}{3}](https://render.githubusercontent.com/render/math?math=%5Cfrac%7B1%7D%7B3%7D)                                                                                                                                                 |
@@ -77,8 +75,6 @@ Effect:
 <div style="text-align:center">
 <img alt="\begin{aligned} y &= x^2 + 3x + 2 \\   &= (x+1)(x+2) \end{aligned}" src="https://render.githubusercontent.com/render/math?math=%5Cbegin%7Baligned%7D%20y%20%26%3D%20x%5E2%20%2B%203x%20%2B%202%20%5C%5C%20%20%20%26%3D%20(x%2B1)(x%2B2)%20%5Cend%7Baligned%7D%20">
 </div>
-
-
 
 ### Some special commands provided here
 
