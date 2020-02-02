@@ -2,19 +2,52 @@
 
 Homework repository for [MATH564 MATH MODELING](https://www.coursicle.com/unc/courses/MATH/564/) @ [UNC-Chapel Hill](https://www.unc.edu/)
 
-## Brief $\LaTeX$ reference
+## File structure
+
+```PowerShell
+math-bio
+│  .gitignore
+│  hw-template.cls -----------------template
+│  new_probs.ps1 -------------------powershell script, auto-create hw folder
+│  README.md
+│  
+├─hw1 ------------------------------homework directories
+│  │  hw1.pdf ----------------------compiled pdf
+│  │  hw1.tex ----------------------.tex source file
+│  │  hw1_plot.py ------------------python script for plotting  
+│  ├─sections ----------------------subfiles corresponding to hw problems
+│  │      prob1.tex
+│  │      prob2.tex
+│  │      ...
+│  └─fig ---------------------------graphs plotted by hw[0-9]_plot.py
+│         fig2(a).pdf
+│         ...
+├─hw2
+└─...
+```
+
+The multiple `.tex` files are compiled into 1 using pacakge `subfile`.
+Within each `hw[0-9]` directory, there will be a `fig` folder storing all the figures,
+a `sections` folder containing all the subfiles 
+
+## Brief LaTeX reference
 
 ### Two modes in latex that can typeset the formulations
 
-1. **Inline mode**, start with an `$`, end with an `$` (`$...$`). E.g. $a + b = \frac{1}{3}$
-2. **Display mode**, start with two `$$`, end with two `$$` (`$$...$$`), or  E.g. $$a+b=\frac{1}{3}$$
+1. **Inline mode**, start with an `$`, end with an `$` (`$...$`). E.g. ![a + b = \frac{1}{3}](https://render.githubusercontent.com/render/math?math=a%20%2B%20b%20%3D%20%5Cfrac%7B1%7D%7B3%7D)
+2. **Display mode**, start with two `$$`, end with two `$$` (`$$...$$`), or  E.g. 
+
+<div style="text-align:center">
+<img src="https://render.githubusercontent.com/render/math?math=a%20%2B%20b%20%3D%20%5Cfrac%7B1%7D%7B3%7D">
+</div>
+<br>
 
 The `\(...\)` and `\[...\]` can also start inline mode math and display mode math, respectively. We recommend using `$...$` for inline mode delimiter and `\[...\]` for displaymode delimiter, for clearer distinction.
 
 ### Basic Maths
 
-1. It is straight-forward for basic arithmetic operations. E.g. $+, - * /, a^b, a_b$.
-2. $\LaTeX$ already defined many useful symbols, macros, (or functions) to typeset the formulations. They start with \, such as \LaTeX is for the latex symbol. In some typeset functions you can give them parameters. E.g. \frac{1}{3} typesets one over three, where the thing within the first {} is nominator, and the thing within the second {} is denominator. {} also helps group thing within it together. Consider the difference between a\_b+1 ($a_b+1$) and a\_{b+1} ($a_{b+1}$)
+1. It is straight-forward for basic arithmetic operations. E.g. `+`, `-` `*` `/`, `a^b`, `a_b` will give ![+, - * /, a^b, a_b](https://render.githubusercontent.com/render/math?math=%2B%2C%20-%20*%20%2F%2C%20a%5Eb%2C%20a_b)
+2. ![\LaTeX](https://render.githubusercontent.com/render/math?math=%5CLaTeX) already defined many useful symbols, macros, (or functions) to typeset the formulations. They start with `\`, such as `\LaTeX` is for the latex symbol. In some typeset functions you can give them parameters. E.g. `\frac{1}{3}` typesets one over three, where the thing within the first `{}` is nominator, and the thing within the second `{}` is denominator. {} also helps group thing within it together. Consider the difference between `a_b+1` (![a_b+1](https://render.githubusercontent.com/render/math?math=a_b%2B1)) and `a_{b+1}` (![a_{b+1}](https://render.githubusercontent.com/render/math?math=a_%7Bb%2B1%7D))
 
 ### Useful symbols and functions
 
