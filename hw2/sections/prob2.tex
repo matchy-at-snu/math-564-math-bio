@@ -5,7 +5,7 @@ and guess from the plot whether the steady state is stable or not. To be more
 confident, the conclusions will be tested by calculation.
 
 \begin{enumerate}
-% Probllem 2(a)
+% Problem 2(a)
 \item The steady state $\bar x$ for equation $x_{n+1} = rx_n(1-x_n)$ is
 $\bar x = 0$. Since there's one arbitrary constant $r$, whether the steady
 state is stable or not depends on the value of $r$.
@@ -14,7 +14,7 @@ We first try $r=2$:
 \begin{SCfigure}[1][h]
     \centering
     \caption[The behavior of equation $x_{n+1} = 2x_n(1-x_n)$]
-    {The behaviour of equation $x_{n+1} = 2x_n(1-x_n)$. The
+    {The behavior of equation $x_{n+1} = 2x_n(1-x_n)$. The
     steady state is marked by the horizontal magenta line.}
     \label{fig:fig2a1}
     \includegraphics[scale=0.6]{../fig/fig2(a)(1).pdf}
@@ -22,11 +22,11 @@ We first try $r=2$:
 It's clear in Figure \ref{fig:fig2a1} that when $r=2$, $\bar x = 0$ is not a
 stable steady state.
 
-The nexy try is $r=0.5$:
+The next try is $r=0.5$:
 \begin{SCfigure}[2][h]
     \centering
     \caption[The behavior of equation $x_{n+1} = \frac{x_n(1-x_n)}{2}$]{
-    The behaviour of equation $x_{n+1} = \frac{x_n(1-x_n)}{2}$,
+    The behavior of equation $x_{n+1} = \frac{x_n(1-x_n)}{2}$,
     The steady state is marked by the horizontal magenta line.}
     \label{fig:fig2a2}
     \includegraphics[scale=0.6]{../fig/fig2(a)(2).pdf}
@@ -40,7 +40,7 @@ Further exploration is shown in Figure \ref{fig:fig2a3} below:
 \begin{SCfigure}[3][h]
     \centering
     \caption[The behavior of equations $x_{n+1} = rx_n(1-x_n)$]{
-    The behaviour of equations $x_{n+1} = rx_n(1-x_n)$, with $r \in \{
+    The behavior of equations $x_{n+1} = rx_n(1-x_n)$, with $r \in \{
         -1, -0.95, -0.5, 0.5, 0.7,0.8, 0.9, 0.95, 0.98, 1
     \}$. It can be seen that the all equations except for the one with $r = -1$
     converges to the steady state (marked by the magenta horizontal line).}
@@ -70,10 +70,10 @@ We can derive that
         &\qquad = |r| < 1
     \end{aligned}
 \]
-It confirms with our conclusion that when $|r| < 1$, $\bar x = 0$ will be a 
+It confirms with our conclusion that when $|r| < 1$, $\bar x = 0$ will be a
 stable steady state.
 \pagebreak
-\item Plotting the figure of equation $x_{n+1} = -x_n^2(1-x_n)$ with initial 
+\item Plotting the figure of equation $x_{n+1} = -x_n^2(1-x_n)$ with initial
 condition $x_0 = 1.6$ slightly off the given steady state $\bar x = (1+ \sqrt{5}
 )/2$ gives:
 \begin{SCfigure}[1][h]
@@ -92,8 +92,8 @@ We can see that the steady state is unstable. The calculation of condition:
 \]
 also confirms that $\bar x = (1+\sqrt{5})/2$ is not stable.
 
-\item Plotting the figure of equation $x_{n+1} = 1/(2+x_n)$ with initial 
-condition $x_0 = 0.4$ slightly off the given steady state $\bar x = \sqrt{2} 
+\item Plotting the figure of equation $x_{n+1} = 1/(2+x_n)$ with initial
+condition $x_0 = 0.4$ slightly off the given steady state $\bar x = \sqrt{2}
 - 1$ gives:
 \begin{SCfigure}[1][h]
     \centering
@@ -105,15 +105,15 @@ We can see that the steady state is stable. The calculation of condition:
 \[
     \begin{aligned}
         &\left|\left.\derivlong{1/(2+x)}\right|_{\bar x}\right|\\
-        &\qquad = \left| \left.\left(\frac{-1}{(2+x)^2}\right)\right|_{\bar x} 
+        &\qquad = \left| \left.\left(\frac{-1}{(2+x)^2}\right)\right|_{\bar x}
         \right|\\
         &\qquad = 3 - 2\sqrt{2} < 1
     \end{aligned}
 \]
 also confirms that $\bar x = \sqrt{2} - 1$ is stable.
 
-\item Plotting the figure of equation $x_{n+1} = x_n \ln x_n^2$ with initial 
-condition $x_0 = 1.648$ slightly off the given steady state $\bar x = e^{1/2}$ 
+\item Plotting the figure of equation $x_{n+1} = x_n \ln x_n^2$ with initial
+condition $x_0 = 1.648$ slightly off the given steady state $\bar x = e^{1/2}$
 gives:
 \begin{SCfigure}[1][h]
     \centering
