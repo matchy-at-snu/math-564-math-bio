@@ -2,6 +2,8 @@
 
 Homework repository for [MATH564 MATH MODELING](https://www.coursicle.com/unc/courses/MATH/564/) @ [UNC-Chapel Hill](https://www.unc.edu/)
 
+I'll probably extend this repo to a solution manual + concise notes to the book _[Mathematical Models in Biology](https://epubs.siam.org/doi/book/10.1137/1.9780898719147?mobileUi=0%27)_, also probably will make a GitHub Pages for displaying this project. Not decided yet (2/2/2020)
+
 ## File structure
 
 ```PowerShell
@@ -34,7 +36,7 @@ a `sections` folder containing all the subfiles
 
 ### Two modes in latex that can typeset the formulations
 
-1. **Inline mode**, start with an `$`, end with an `$` (`$...$`). 
+1. **Inline mode**, start with an `$`, end with an `$` (`$...$`).
 2. **Display mode**, start with two `$$`, end with two `$$` (`$$...$$`)
 
  `\(...\)` and `\[...\]` can also start inline mode math and display mode math, respectively. We recommend using `$...$` for inline mode delimiter and `\[...\]` for displaymode delimiter, for clearer distinction.
@@ -82,3 +84,26 @@ Effect:
 | ------------------ | ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | derivative      | `\deriv{y}`, <br> `\deriv[t]{N}`, <br>`\derivlong{x^2+3x+2}` | ![\frac{\mathrm{d}y}{\mathrm{d}x}](https://render.githubusercontent.com/render/math?math=%5Cfrac%7B%5Cmathrm%7Bd%7Dy%7D%7B%5Cmathrm%7Bd%7Dx%7D),<br>![\frac{\mathrm{d}N}{\mathrm{d}t}](https://render.githubusercontent.com/render/math?math=%5Cfrac%7B%5Cmathrm%7Bd%7DN%7D%7B%5Cmathrm%7Bd%7Dt%7D),<br>![\frac{\mathrm{d}}{\mathrm{d}x}(x^2+3x+2)](https://render.githubusercontent.com/render/math?math=%5Cfrac%7B%5Cmathrm%7Bd%7D%7D%7B%5Cmathrm%7Bd%7Dx%7D(x%5E2%2B3x%2B2)) |
 | partial derivative | `\pderiv{f}{x}`, <br><br>`\pderivlong{x^2+3x+2}{x}`          | ![\frac{\partial f}{\partial x}](https://render.githubusercontent.com/render/math?math=%5Cfrac%7B%5Cpartial%20f%7D%7B%5Cpartial%20x%7D), <br>![\frac{\partial}{\partial x}(x^2 + 3x + 2)](https://render.githubusercontent.com/render/math?math=%5Cfrac%7B%5Cpartial%7D%7B%5Cpartial%20x%7D(x%5E2%20%2B%203x%20%2B%202))                                                                                                                                                        |
+
+## Progress tracking
+
+### Homework Progress
+
+- [x] homework 1
+- [ ] homework 2
+  - [ ] problem 1
+  - [x] problem 2 
+  - [x] problem 4
+  - [ ] problem 8
+  - [ ] problem 11
+  - [ ] problem 16
+  - [ ] problem 17 **<- CURR.matchy**
+
+### To-dos
+
+- [ ] Improve PowerShell script
+- [ ] Improve the options part in `hw-template.cls`
+
+## Misc
+
+Suggestions are welcome! Raise an issue or shoot me an email.
