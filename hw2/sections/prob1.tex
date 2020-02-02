@@ -1,5 +1,25 @@
-\begin{homeworkProblem}[1] % 开头结尾用homeworkProblem环境包起来 方括号里写题号
-\begin{enumerate} % 这个是小题的题号 已经设置成(a)(b)(c)...的格式了
-    \item 在这里写每个小题
+
+\begin{homeworkProblem}[1]
+\begin{enumerate}
+    \item This equation is linear.
+    \[
+        x_n = (1-\alpha) x_{n-1} + \beta x_n \\
+        (1 - \beta) x_n = (1 - \alpha) x_{n-1} \\
+        x_n = \frac{1 - \alpha}{1 - \beta} x_{n-1} \\
+        \lamda^2 - \frac{1 - \alpha}{1 - \beta} \lamda = 0 \\
+        \lamda_1 = 0, \lamda_2 = \frac{1 - \alpha}{1 - \beta} \\
+        x_n = c(\frac{1 - \alpha}{1 - \beta})^n \\
+        \]
+
+    \item This equation is non-linear.
+    \[
+        x_{n+1} = \frac{x_n}{1 + x_n} \\
+        x = \frac{x}{1 + x}  \\
+        x + x^2 = x \\
+        x^2 = 0 \\
+    \]
+    x = 0 is a steady state.
+
+    \item
 \end{enumerate}
 \end{homeworkProblem}
