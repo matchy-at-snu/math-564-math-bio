@@ -233,7 +233,7 @@
 %
 
 % For derivatives
-\newcommand{\derivlong}[1]{\frac{\mathrm{d}}{\mathrm{d}x} \left(#1\right)}
+\newcommand{\derivlong}[2][x]{\frac{\mathrm{d}}{\mathrm{d}#1} \left(#2\right)}
 \newcommand{\deriv}[2][x]{\frac{\mathrm{d}#2}{\mathrm{d}#1}}
 
 % For partial derivatives

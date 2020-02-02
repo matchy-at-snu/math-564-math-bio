@@ -16,7 +16,7 @@ def cobwebbing(x0, fun, output_x, output_y, curr_layer=0, max_layer=50):
         return
     cobwebbing(fun(x0), fun, output_x, output_y, curr_layer+1, max_layer)
 
-def plot_cobwebbing(x0, fun, x_bar, title, max_layer=20):
+def plot_cobwebbing(x0, fun, x_bar, title, max_layer=20, **kwargs):
     """ Use the cobwebbing method to plot a higher-order difference equation
     Args:
         x0: initial value
@@ -27,7 +27,7 @@ def plot_cobwebbing(x0, fun, x_bar, title, max_layer=20):
     x = []; y = []
     cobwebbing(x0, fun, x, y, max_layer=max_layer)
     plt.figure()
-    plt.plot(x, y, '--o')
+    plt.plot(x, y, **kwargs)
     plt.xticks(range(0, max_layer+1, max_layer//20))
     plt.xlabel("$x_n$")
     plt.ylabel("$x_{n+1}$")
@@ -113,4 +113,13 @@ def main():
     plot_logis_lambda(2, 50)
 
 if __name__ == "__main__":
-    main()
+    plot_cobwebbing(
+        10,
+        lambda x: x*np.e**(2*(1-x/2000)),
+        2000,
+        "fig4(d)",
+        300,
+        linestyle='--',
+        linewidth=0.5,
+        markersize=2
+    )

@@ -7,6 +7,9 @@ __pycache__
 # latex
 _minted-*
 
+# temp
+Chapter1_Linear_Difference_Equation.ipynb
+
 # LaTeX-workshop auxillary files
 *.aux
 *.log
