@@ -1,0 +1,51 @@
+\begin{homeworkProblem}
+    Consider the difference equation
+    \[
+        x_{n+2} - 3x_{n+1} + 2x_n = 0.
+    \]
+    \begin{enumerate}
+        \item Show that the general solution to this equation is
+        \[
+            x_n = A_1 + 2^n A_2
+        \]
+        Now suppose that $x_0 = 10$ and $x_1 = 20$. Then $A_1$ and $A_2$ must
+        satisfy the system of equations
+        \[
+            \begin{aligned}
+                A_1 + 2^0 A_2 = x_0 = 10,\\
+                A_1 + 2^1 A_2 = x_1 = 20.
+            \end{aligned}
+        \]
+    \item Solve for $A_1$ and $A_2$ and find the solution to the above
+    \textit{initial value problem}.
+    \end{enumerate}
+    
+    \segline
+    
+    \solution
+    
+    % Write your answers here %
+    \begin{enumerate}
+        \item The characteristic solution is \[
+            \lambda^2 - 3 \lambda + 2 = 0
+        \]
+        The characterictic roots are \[
+            \lambda_1 = 1, \quad \lambda_2 = 2.
+        \]
+        By the principle of linear superposition, the general solution is indeed \[
+            x_n = A_1 + 2^n A_2
+        \]
+        \item Solving the system of equations
+        \[
+            \begin{aligned}
+                A_1 + 2^0 A_2 = x_0 = 10,\\
+                A_1 + 2^1 A_2 = x_1 = 20.
+            \end{aligned}
+        \] gives \[
+            A_1 = 0, \quad A_2 = 10.
+        \]
+        Therefore, the solution should be \[
+            x_n = 10 \cdot 2^n
+        \]
+    \end{enumerate}
+    \end{homeworkProblem}

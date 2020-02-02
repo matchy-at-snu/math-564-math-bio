@@ -1,0 +1,112 @@
+\begin{homeworkProblem}[17][Annual plant propagation]
+    \begin{enumerate}
+        % Solution 17(a)
+        \item The model for annual plants was condensed into a single equation (15)
+        for $p_n$, the number of plants. Show that it can also be written as a
+        single equation in $S_n^1$.
+    
+        \textit{Solution}: We have \begin{align}
+            &p_n = \alpha s_n^1 + \beta s_n^2 \label{eq:pn} \\
+            &\overline{s_n^1} = (1-\alpha)s_n^1 \label{eq:no_germ}\\
+            &\overline{s_n^2} = (1-\alpha)s_n^2\\
+            &s_n^0=\gamma p_n \label{eq:new_seeds}\\
+            &s_{n+1}^1 = \sigma s_n^0 \label{eq:next_gen_seeds_1}\\
+            &s_{n+1}^2 = \sigma \overline{s_n^1} \label{eq:next_gen_seeds_2}
+        \end{align}
+    
+        Make several substitutions:
+        \begin{align}
+            &\eqref{eq:new_seeds} \rightarrow \eqref{eq:next_gen_seeds_1}
+            & & S_{n+1}^1 = \sigma \gamma p_n \label{eq:sn1_next} \\
+            % -------------------------------------------------------------------- %
+            &\eqref{eq:no_germ} \rightarrow \eqref{eq:next_gen_seeds_2}
+            & & S_{n}^2 = \sigma (1-\alpha) S_{n-1}^1 \label{eq:sn2}\\
+            % -------------------------------------------------------------------- %
+            &\eqref{eq:pn} \rightarrow \eqref{eq:sn1_next}
+            & & S_{n+1}^1 = \sigma \gamma (\alpha s_n^1 + \beta s_n^2)
+            \label{eq:res}\\
+            % -------------------------------------------------------------------- %
+            &\eqref{eq:sn2} \rightarrow \eqref{eq:res}
+            & & S_{n+1}^1 = \sigma \gamma (\alpha s_n^1 +
+            \beta \sigma (1-\alpha) S_{n-1}^1) \label{eq:sol}
+        \end{align}
+        And equation \eqref{eq:sol} should be the answer.
+        % Solution 17(b)
+        \item Seeds produced this year (year $n$) which survived the winter and will
+        germinate next year (year $(n+1)$)
+    
+        % Solution 17(c)
+        \item We know from the book that \[
+            \lambda_{1,2} = \frac{\sigma \gamma \alpha}{2} (1 \pm \sqrt{1 + \delta})
+        \] where \[
+            \delta = \frac{4}{\gamma}\frac{\beta}{\alpha}
+                    \left( \frac{1}{\alpha} - 1\right)
+        \]
+        We know that $\delta$ is a positive quantity since $\alpha < 1$. So we have
+        a positive eigenvalue and a negative eigenvalue.
+    
+        If we want the population to increase in size, we should have the positive
+        eigenvalue $\lambda_1 > 1$.
+    
+        Plug in $\alpha = \beta = 0.001$ and $\sigma = 1$, we'll have \[
+        \begin{aligned}
+            \delta &= \frac{4}{\gamma}(\frac{1}{0.001} - 1) \approx \frac{4000}{\gamma}\\
+            \lambda_1 &= \frac{0.001\gamma}{2} (1 + \sqrt{1 + \delta})
+        \end{aligned}
+        \quad\rightarrow\quad
+        \lambda_1 = \frac{\gamma}{2000}(1 + \sqrt{1+ \frac{4000}{\gamma}}) > 1
+        \]
+        Solving the inequity gives \[
+            \gamma > 500
+        \]
+    
+        % Solution 17(d)
+        \item In case (1), the parameters are: \[
+            \alpha = 0.5, \quad \beta = 0.25, \quad \gamma = 2.0, \quad \sigma = 0.8,
+        \] we can compute that \[
+        \begin{aligned}
+            \delta &= \frac{4}{\gamma}\frac{\beta}{\alpha}
+            \left( \frac{1}{\alpha} - 1\right)
+            = 1\\
+            \lambda_1 &= \frac{\sigma \gamma \alpha}{2} (1 + \sqrt{1 + \delta})
+            = 0.4 (1 + \sqrt{2})\\
+            &\approx 0.97 < 1
+        \end{aligned}
+        \]
+        So the population decreases.
+    
+        An in case (2), the parameters are: \[
+            \alpha = 0.6, \quad \beta = 0.3, \quad \gamma = 2.0, \quad \sigma = 0.8,
+        \] we can compute that \[
+        \begin{aligned}
+            \delta &= \frac{4}{\gamma}\frac{\beta}{\alpha}
+            \left( \frac{1}{\alpha} - 1\right)
+            = \frac{2}{3}\\
+            \lambda_1 &= \frac{\sigma \gamma \alpha}{2} (1 + \sqrt{1 + \delta})
+            = 0.48 (1 + \sqrt{5/3})\\
+            &\approx 1.10 >1
+        \end{aligned}
+        \]
+        So the population increases.
+    
+        % Solution 17(3)
+        \item Consider the positive eigenvalue as \[
+            \lambda_1 = \frac{a + \sqrt{a^2 + 4b}}{2}
+        \] where \[
+            a = \alpha \sigma \gamma, \quad b = \beta \sigma^2 (1-\alpha)\gamma
+        \]
+        If we want $\lambda_1 > 1$, then \[
+        \begin{aligned}
+            \frac{a + \sqrt{a^2 + 4b}}{2} &> 1\\
+            \sqrt{a^2 + 4b} &> 2-a\\
+            a^2 + 4b  &> a^2 - 4a + 4\\
+            a + b &> 1
+        \end{aligned}
+        \] (Note: If $(2-a) < 0$ then the inequity will always be trivially true,
+        thus it's not of too much interest. We only consider $(2-a) > 0$ here.)
+        Substitute back $a = \alpha \sigma \gamma$ and
+        $b = \beta \sigma^2 (1-\alpha)\gamma$, we'll have \[
+            \gamma > \frac{1}{\alpha \sigma + \beta \sigma^2 (1-\alpha)}
+        \]
+    \end{enumerate}
+    \end{homeworkProblem}

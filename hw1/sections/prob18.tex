@@ -1,0 +1,117 @@
+\begin{homeworkProblem}[18][Blood $CO_2$ and ventilation]
+    \begin{enumerate}
+    % Solution 18(a)
+    \item We know from the book that \begin{align}
+        C_{n+1} &= C_{n} - \mathcal{L}(V_n, C_n) + m, \label{CO2_next}\\
+        V_{n+1} &= \mathcal{S}(C_n). \label{ventilation_next}
+    \end{align}
+    From the question description we know that \[
+        \mathcal{L}(V_n, C_n) = \beta V_n, \qquad V_{n+1} = \alpha C_n
+    \]
+    Make some simple substitution, we'll have \[
+        C_{n+1} = C_{n} - \alpha \beta C_{n-1} + m
+    \]
+    i.e. \[
+        C_{n+1} - C_n + \alpha\beta C_{n-1} = m
+    \]
+
+    % Solution 18(b)
+    \item \begin{enumerate}[label=(\arabic*)]
+    % Solution 18(b)(1)
+    \item Suppose $C_n = m / \alpha \beta$, then \[
+        C_{n+1} - C_n + \alpha \beta C_{n-1}
+        = m/\alpha\beta - m/\alpha\beta + \alpha\beta \cdot \frac{m}{\alpha\beta}
+        = m
+    \]
+    Hence, $C_n = m/\alpha \beta$ is a particular solution.
+    % Solution 18(b)(2)
+    \item Let $m = 0$, then it'll turn into a homogeneos problem. The characteristic
+    equation would be \[
+        \lambda^2 - \lambda + \alpha\beta = 0
+    \]
+    with eigenvalues \[
+        \lambda_{1,2} = \frac{1 \pm \sqrt{1 - 4\alpha\beta}}{2},
+    \]
+    which is the \textit{complementary/homogeneous solution}.
+
+    Combined the complementary solution with the particular solution, the general
+    solution would be \[
+        C_{n} = \frac{m}{\alpha\beta} +
+                C_1 \left(\frac{1 + \sqrt{1 - 4\alpha\beta}}{2}\right)^n +
+                C_2 \left(\frac{1 - \sqrt{1 - 4\alpha\beta}}{2}\right)^n
+    \]
+    \end{enumerate}% end 18(b)
+
+    % Solution 18(c)
+    \item \begin{enumerate}[label=(\arabic*)]
+    % Solution 18(c)(1)
+    \item Assume that $4\alpha\beta < 1$, then $\alpha\beta < 1/4$. This implies \[
+        \mathcal{L}(V_n, C_n) = \beta V_n = \alpha \beta C_{n-1} < \frac{C_{n-1}}{4}
+    \]
+    i.e., the amount of $CO_2$ loss / breathed out will not be larger than
+    $\frac{1}{4}$ of the blood $CO_2$ amount.
+
+    And, since $4 \alpha\beta < 1$, then $ 0 < \sqrt{1 - 4\alpha\beta} < 1$. Let
+    $\sqrt{1 - 4\alpha\beta} = \delta$, then \[
+    \begin{aligned}
+        \lambda_1 &= \frac{1+\delta}{2} \in (\frac{1}{2}, 1)\\
+        \lambda_2 &= \frac{1-\delta}{2} \in (0, \frac{1}{2})
+    \end{aligned}
+    \]
+    Therefore, the absolute value of each eigenvalue $|\lambda_i| < 1$, implying \[
+        \lim_{n \to \infty} (C_{n}) = \frac{m}{\alpha\beta}
+    \] since the power of a fraction will diminish towards $0$.
+    Under this scenario, a steady state will eventually be established regardless of
+     the initial conditions. And the steady ventilation rate would be \[
+        V_{n} = \alpha \frac{m}{\alpha\beta} = \frac{m}{\beta}
+    \]
+
+    %Solution 18(c)(2)
+    \item Assume that $4\alpha\beta > 1$, then $1 - 4\alpha\beta < 0$, which means
+    that the characteristic equation would have complex eigenvalues. The conjugated
+    complex eigenvalues $\lambda = a \pm bi$ have \[
+        a = \frac{1}{2}, \quad b = \frac{\sqrt{4\alpha\beta - 1}}{2}
+    \]
+    i.e. \[
+        r = \sqrt{a^2 + b^2} = \sqrt{\alpha\beta}, \quad \theta = \tan^{-1}(b/a)
+        = \tan^{-1}(\sqrt{4\alpha\beta - 1})
+    \]
+    Then \[
+        C_n = r^n (C_1 \cos(n\theta) + C_2 \sin(n\theta))
+        = (\sqrt{\alpha\beta})^n \sin(n\theta + \phi)
+    \]
+    where $\tan \phi = C_1/C_2$. It is clear that the solution will oscillate at
+    frequency $f = \theta/2\pi$
+
+    If $\alpha\beta \geq 1$, then the oscillation will increase in magnitude. When
+    $\alpha\beta = 1$, the oscillation frequency would be $f = \tan^{-1}(\sqrt{3}) =
+    \frac{\pi}{3}$.
+
+    This result could correspond to Cheyne-Stokes respiration, which is a disorder
+    characterized by recurrent oscillation between apnea and hyperpnea (May, 1978
+    and Naughton, 1998).
+    \end{enumerate}% end 18(c)
+
+    % Solution 18(d)
+    \item For now the ventilation rate is proportional to blood $CO_2$
+    concentration. In real biological systems, body will likely adjust the rate of
+    breath according to $C_n$, just like the relationship between air friction and
+    velocity. It's suitable to suppose that \[
+        \mathcal{S}(C_n) = \alpha C_n^2
+    \]
+    Then the equation will turn into \[
+        \begin{aligned}
+        &C_{n+1} = C_n - \alpha \beta C_{n-1}^2 + m
+        &C_{n+1} - C_n + \alpha \beta C_{n-1}^2 = m
+        \end{aligned}
+    \]
+    Suppose $C_{n+1}=C_n$, then we can derive a steady-state where \[
+        C_n = \sqrt{\frac{m}{\alpha\beta}}
+    \]
+    It would also be interesting to think about the equilibrium shifting between
+    bicarbonates and $CO_2$ and the formation of carbaminohemoglobin($HbCO_2$).
+    But deriving a nice math equation with respect to these factors is out of our
+    ability.
+
+    \end{enumerate}
+    \end{homeworkProblem}

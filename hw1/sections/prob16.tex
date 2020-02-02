@@ -1,0 +1,59 @@
+\begin{homeworkProblem}[16][Red blood cell production]
+    \begin{enumerate}
+    % Solution 16(a)
+    \item We have \begin{align}
+        R_{n+1} &= (1-f) R_n + M_n, \label{eq:RBC_in_circulation}\\
+        M_{n+1} &= \gamma f R_n \label{eq:RBC_produced_nextgen}
+    \end{align}
+    Equation \eqref{eq:RBC_produced_nextgen} can be re-written into \begin{equation}
+        M_{n} = \gamma f R_{n-1} \label{eq:RBC_produced}
+    \end{equation}
+    Substitute \eqref{eq:RBC_produced} into \eqref{eq:RBC_in_circulation}, we'll get
+    \[
+        R_{n+1} = (1-f) R_n + \gamma f R_{n-1}
+    \]
+    
+    % Solution 16(b)
+    \item From (a), it's easy to see that the characteristic function is \[
+        \lambda^2 - (1-f) \lambda - \gamma f
+    \]
+    Hence, the eigenvalues are indeed given by \[
+        \lambda_{1,2} = \frac{(1-f) \pm \sqrt{(1-f)^2} + 4\gamma f}{2}
+    \]
+    Since $f$ is definitely a fraction value between $0$ and $1$ (it's horrible to
+    think that your spleen removes 100\% of your RBCs in circulation), and $\gamma$
+    is larger than $0$, so that there will be RBC produced.
+    
+    Observe the boundary stated above, which makes the model biologically reasonable
+    , we know \[
+        \sqrt{(1-f)^2 + 4\gamma f} > \sqrt{(1-f)^2} = (1-f)
+    \]
+    Therefore, we should have a positive and a negative eigenvalue, i.e.,
+    $\lambda_1 > 0$ and $\lambda_2 < 0$.
+    
+    % Solution 16(c)
+    \item Suppose the positive eigenvalue $\lambda_1 = 1$, then \[
+        \begin{aligned}
+        \frac{(1-f) + \sqrt{(1-f)^2} + 4\gamma f}{2} &= 1\\
+        \sqrt{(1-f)^2} + 4\gamma f &= 1+f\\
+        (1-f)^2 + 4\gamma f &= (1+f)^2\\
+        4\gamma f &= 4f\\
+        \gamma &= 1
+        \end{aligned}
+    \]
+    
+    % Solution 16(d)
+    \item From (c) we know $\gamma = 1$, so \[
+        \sqrt{(1-f)^2} + 4\gamma f = 1+f
+    \]
+    Then \[
+        \lambda_2 = -2f/2 = -f
+        \]
+    And the solution \[
+        R_n = A \lambda_1^n + B \lambda_2^n = A + B(-f)^n
+    \]
+    The solution will oscillate around constant $A$, and since $f$ is a fraction the
+    oscillation amplitude will decrease as $n$ increases. This means that the RBC
+    number in circulation will eventually reach an equilibrium.
+    \end{enumerate}
+    \end{homeworkProblem}

@@ -1,0 +1,144 @@
+\begin{homeworkProblem}
+    In Section 1.4 we determined that there are two values $\lambda_1$ and
+    $\lambda_2$ and two vectors $\left(\begin{matrix}A_1\\B_1\end{matrix}\right)$
+    and $\left(\begin{matrix}A_2\\B_2\end{matrix}\right)$ called
+    \textit{eigenvectors} that satisfy equation (29).
+    
+    \begin{enumerate}
+        \item Show that this equation can be written in matrix form as
+        \[
+        \lambda\left(\begin{matrix}
+            A\\B
+        \end{matrix}\right) = \mathbf{M} \left(\begin{matrix}
+            A\\B
+        \end{matrix}\right)
+        \]
+        where $\mathbf{M}$ is given by equation (27c).
+        \item Show that one way of expressing the eigenvectors in terms of $a_{ij}$
+        is: \[
+            \left(\begin{matrix}
+                A_i\\B_i
+            \end{matrix}\right) = \left(\begin{matrix}
+                1\\ \frac{\lambda_i - a_{11}}{a_{12}}
+            \end{matrix}\right)
+        \]
+        for $a_{12} \neq 0$.
+        \item Show that eigenvectors are defined only up to a multiplicative
+        constant; i.e., if $\mathbf{v}$ is an eigenvector corresponding to the
+        eigenvalue $\lambda$, then $\alpha\mathbf{v}$ is also an eigenvector
+        corresponding to $\lambda$ for all real numbers $\alpha$.
+    \end{enumerate}
+    
+    \segline
+    
+    \solution
+    \begin{enumerate}
+        \item Equation (29) in the book is \[
+            \begin{aligned}
+                0 &= A(a_{11} - \lambda) + B(a_{12})\\
+                0 &= A(a_{21}) + B(a_{22} - \lambda)
+            \end{aligned}
+        \]
+        Re-arranging the terms with $\lambda$ to the left-hand side gives\[
+            \begin{aligned}
+                \lambda A &= a_{11} A + a_{12} B\\
+                \lambda B &= a_{21} A + a_{22} B
+            \end{aligned}
+        \]
+        which is equivalent of \[
+            \lambda \left(\begin{matrix}
+                A\\B
+            \end{matrix}\right) = \left(\begin{matrix}
+                a_{11} & a_{12}\\
+                a_{21} & a_{22}
+            \end{matrix}\right) \left(\begin{matrix}
+                A\\B
+            \end{matrix}\right) = \mathbf{M} \left(\begin{matrix}
+                A\\B
+            \end{matrix}\right)
+        \]
+        \item \textit{Proof}. Suppose the eigenvalue is $\lambda_i$ and the
+        eigenvector corresponding to it is $\mathbf{v}_i = \left(\begin{matrix}
+            A_i\\B_i
+        \end{matrix}\right)$. Then we know by the definition of eigenvector that \[
+            \left(\begin{matrix}
+                a_{11} & a_{12}\\
+                a_{21} & a_{22}
+            \end{matrix}\right) \mathbf{v}_i = \lambda_i \mathbf{v}_i.
+        \]
+        Suppose $\mathbf{v}_i = \left(\begin{matrix}
+            1\\
+            \frac{\lambda_i - a_{11}}{a_{12}}
+        \end{matrix}\right)$, then\[
+            \left(\begin{matrix}
+                a_{11} & a_{12}\\
+                a_{21} & a_{22}
+            \end{matrix}\right) \mathbf{v}_i =
+            \left(\begin{matrix}
+                a_{11} & a_{12}\\
+                a_{21} & a_{22}
+            \end{matrix}\right)
+            \left(\begin{matrix}
+                1\\ \frac{\lambda_i - a_{11}}{a_{12}}
+            \end{matrix}\right) =
+            \left(\begin{matrix}
+                \lambda_i \\
+                a_{21} + \frac{a_{22}(\lambda_i - a_{11})}{a_{12}}
+            \end{matrix}\right)
+        \]
+        And \[
+            \lambda_i \mathbf{v}_i = \left(\begin{matrix}
+                \lambda_i \\
+                \frac{\lambda_i^2 - a_{11}\lambda_i}{a_{12}}
+            \end{matrix}\right)
+        \]
+        Suppose \[
+            \left(\begin{matrix}
+                \lambda_i \\
+                a_{21} + \frac{a_{22}(\lambda_i - a_{11})}{a_{12}}
+            \end{matrix}\right) = \left(\begin{matrix}
+                \lambda_i \\
+                \frac{\lambda_i^2 - a_{11}\lambda_i}{a_{12}}
+            \end{matrix}\right)
+        \]
+        since we have $a_{12} \neq 0$, there will be \[
+            \lambda_i^2 -a_{11}\lambda_i =
+            a_{21}a_{12} + a{22} \lambda_i - a+{11}a_{22}
+        \]
+        which gives \[
+            \lambda_i = \frac{\beta \pm \sqrt{\beta^2 - 4\gamma}}{2}
+        \]
+        where \[
+            \beta = a_{11} + a_{22}, \quad \gamma = (a_{11}a_{22} - a_{21}a_{12}).
+        \]
+        And that's exactly the value of $\lambda_i$.
+    
+        Thus we have shown that $\mathbf{v}_i = \left(\begin{matrix}
+            1\\ \frac{\lambda_i - a_{11}}{a_{12}}
+        \end{matrix}\right)$ satisfies
+        $\mathbf{M}\mathbf{v}_i = \lambda_i \mathbf{v}_i$,
+        i.e. it is indeed one way of expressing the eigenvector.
+        \begin{flushright}
+            $\qed$
+        \end{flushright}
+    
+        \item \textit{Proof}. Suppose that $\mathbf{v}$ is the eigenvector
+        corresponding to eigenvalue
+        $\lambda$, then it is known that \[
+            \mathbf{M}\mathbf{v} = \lambda\mathbf{v}
+        \]
+        For $\alpha\mathbf{v}$, we know from the properties of scalar multiplication
+        \[
+            \mathbf{M} \left(\alpha \mathbf{v}\right) =
+            \alpha \left(\mathbf{M} \mathbf{v}\right)
+        \]
+        and \[
+            \lambda(\alpha\mathbf{v}) = \alpha(\lambda \mathbf{v})
+        \]
+        It's clear that the two quantities are equal. Thus, by the definition of
+        eigenvectors, $\alpha \mathbf{v}$ is also an eigenvector.
+        \begin{flushright}
+            $\qed$
+        \end{flushright}
+    \end{enumerate}
+    \end{homeworkProblem}
