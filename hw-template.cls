@@ -98,6 +98,12 @@
 % For fancy code blocks with syntax highlighting
 \RequirePackage[newfloat]{minted}
 
+% For compile multiple files
+\RequirePackage{subfiles}
+
+% For using side-captions
+\usepackage{sidecap}
+
 % -----------------------------------------------------------------------------%
 
 %
