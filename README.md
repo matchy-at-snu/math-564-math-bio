@@ -18,15 +18,17 @@ The `\(...\)` and `\[...\]` can also start inline mode math and display mode mat
 
 ### Useful symbols and functions
 
+
+
 |                               | code                                                              | effect                                                           |
 | ----------------------------- | ----------------------------------------------------------------- | ---------------------------------------------------------------- |
-| fraction                      | `\frac{1}{3}`                                                     | $\frac{1}{3}$                                                    |
-| summation                     | `\sum_{i=1}^{N}`                                                  | $\sum_{i=1}^{N}$                                                 |
-| products                      | `\prod_{i=1}^{N}`                                                 | $\prod_{i=1}^{N}$                                                |
-| indexing                      | `w_{i, j}`                                                        | $w_{i, j}$                                                       |
-| frequently used Greek letters | `\alpha`, `\beta`, `\gamma`                                       | $\alpha, \beta, \gamma$                                          |
-| steady state/fixed points     | `\bar x` or `\overline x`                                         | $\bar x$, $\overline x$                                          |
-| vector forms                  | `\begin{bmatrix} x_{i, 1} \\ \vdots \\ x_{i, p+1}  \end{bmatrix}` | $\begin{bmatrix} x_{i, 1} \\ \vdots \\ x_{i, p+1} \end{bmatrix}$ |
+| fraction                      | `\frac{1}{3}`                                                     | <img src="https://render.githubusercontent.com/render/math?math=\frac{1}{3}>                                                    |
+| summation                     | `\sum_{i=1}^{N}`                                                  | <img src="https://render.githubusercontent.com/render/math?math=\sum_{i=1}^{N}>                                                 |
+| products                      | `\prod_{i=1}^{N}`                                                 | <img src="https://render.githubusercontent.com/render/math?math=\prod_{i=1}^{N}>                                                |
+| indexing                      | `w_{i, j}`                                                        | <img src="https://render.githubusercontent.com/render/math?math=w_{i, j}>                                                       |
+| frequently used Greek letters | `\alpha`, `\beta`, `\gamma`                                       | <img src="https://render.githubusercontent.com/render/math?math=\alpha, \beta, \gamma>                                          |
+| steady state/fixed points     | `\bar x` or `\overline x`                                         | <img src="https://render.githubusercontent.com/render/math?math=\bar x, \overline x>                                          |
+| vector forms                  | `\begin{bmatrix} x_{i, 1} \\ \vdots \\ x_{i, p+1}  \end{bmatrix}` | <img src="https://render.githubusercontent.com/render/math?math=\begin{bmatrix} x_{i, 1} \\ \vdots \\ x_{i, p+1} \end{bmatrix}> |
 
 ### Useful environment
 
@@ -44,12 +46,12 @@ $$
 ```
 
 Effect:
-$$
+<img src="https://render.githubusercontent.com/render/math?math=
 \begin{aligned}
 y &= x^2 + 3x + 2 \\
   &= (x+1)(x+2)
 \end{aligned}
-$$
+>
 
 ### Some special commands provided here
 
