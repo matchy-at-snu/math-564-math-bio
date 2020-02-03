@@ -11,33 +11,53 @@ $\bar x = 0$. Since there's one arbitrary constant $r$, whether the steady
 state is stable or not depends on the value of $r$.
 
 We first try $r=2$:
-\begin{SCfigure}[1][h]
+\begin{figure}[h]
     \centering
-    \caption[The behavior of equation $x_{n+1} = 2x_n(1-x_n)$]
-    {The behavior of equation $x_{n+1} = 2x_n(1-x_n)$. The
-    steady state is marked by the horizontal magenta line.}
+    \begin{subfigure}[t]{0.4\linewidth}
+        \centering
+        \includegraphics[scale=0.5]{fig/fig2(a)(1)_cob.pdf}
+        \caption{$x_{n+1}\ v.s.\ x_n$}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.4\linewidth}
+        \centering
+        \includegraphics[scale=0.5]{../fig/fig2(a)(1).pdf}
+        \caption{$x_{n+1}\ v.s.\ n$}
+    \end{subfigure}
+    \caption[The behavior of equation $x_{n+1} = 2x_n(1-x_n)$]{
+    The behavior of equation $x_{n+1} = 2x_n(1-x_n)$,
+    The steady state is marked by the horizontal magenta line.}
     \label{fig:fig2a1}
-    \includegraphics[scale=0.6]{../fig/fig2(a)(1).pdf}
-\end{SCfigure}
+\end{figure}
+
 It's clear in Figure \ref{fig:fig2a1} that when $r=2$, $\bar x = 0$ is not a
 stable steady state.
 
 The next try is $r=0.5$:
-\begin{SCfigure}[2][h]
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}[t]{0.4\linewidth}
+        \centering
+        \includegraphics[scale=0.5]{fig/fig2(a)(2)_cob.pdf}
+        \caption{$x_{n+1}\ v.s.\ x_n$}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.4\linewidth}
+        \centering
+        \includegraphics[scale=0.5]{../fig/fig2(a)(2).pdf}
+        \caption{$x_{n+1}\ v.s.\ n$}
+    \end{subfigure}
     \centering
     \caption[The behavior of equation $x_{n+1} = \frac{x_n(1-x_n)}{2}$]{
     The behavior of equation $x_{n+1} = \frac{x_n(1-x_n)}{2}$,
     The steady state is marked by the horizontal magenta line.}
     \label{fig:fig2a2}
-    \includegraphics[scale=0.6]{../fig/fig2(a)(2).pdf}
-\end{SCfigure}
+\end{figure}
 It seems that when $r = 0.5$, $\bar x = 0$ is a stable steady state. It's
 intuitive to guess that probably $r < 1$ will make $\bar x = 0$ be stable.
 
-\pagebreak
-
 Further exploration is shown in Figure \ref{fig:fig2a3} below:
-\begin{SCfigure}[3][h]
+\begin{SCfigure}[1][h]
     \centering
     \caption[The behavior of equations $x_{n+1} = rx_n(1-x_n)$]{
     The behavior of equations $x_{n+1} = rx_n(1-x_n)$, with $r \in \{
@@ -76,11 +96,22 @@ stable steady state.
 \item Plotting the figure of equation $x_{n+1} = -x_n^2(1-x_n)$ with initial
 condition $x_0 = 1.6$ slightly off the given steady state $\bar x = (1+ \sqrt{5}
 )/2$ gives:
-\begin{SCfigure}[1][h]
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}[t]{0.4\linewidth}
+        \centering
+        \includegraphics[scale=0.5]{fig/fig2(b)_cob.pdf}
+        \caption{$x_{n+1}\ v.s.\ x_n$}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.4\linewidth}
+        \centering
+        \includegraphics[scale=0.5]{../fig/fig2(b).pdf}
+        \caption{$x_{n+1}\ v.s.\ n$}
+    \end{subfigure}
     \centering
     \caption{The behavior of equation $x_{n+1} = -x_n^2(1-x_n)$}
-    \includegraphics[scale=0.6]{../fig/fig2(b)}
-\end{SCfigure}
+\end{figure}
 \\
 We can see that the steady state is unstable. The calculation of condition:
 \[
@@ -95,11 +126,22 @@ also confirms that $\bar x = (1+\sqrt{5})/2$ is not stable.
 \item Plotting the figure of equation $x_{n+1} = 1/(2+x_n)$ with initial
 condition $x_0 = 0.4$ slightly off the given steady state $\bar x = \sqrt{2}
 - 1$ gives:
-\begin{SCfigure}[1][h]
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}[t]{0.4\linewidth}
+        \centering
+        \includegraphics[scale=0.5]{fig/fig2(c)_cob.pdf}
+        \caption{$x_{n+1}\ v.s.\ x_n$}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.4\linewidth}
+        \centering
+        \includegraphics[scale=0.5]{../fig/fig2(c).pdf}
+        \caption{$x_{n+1}\ v.s.\ n$}
+    \end{subfigure}
     \centering
     \caption{The behavior of equation $x_{n+1} = 1/(2+x_n)$}
-    \includegraphics[scale=0.6]{../fig/fig2(c)}
-\end{SCfigure}
+\end{figure}
 \\
 We can see that the steady state is stable. The calculation of condition:
 \[
@@ -115,11 +157,22 @@ also confirms that $\bar x = \sqrt{2} - 1$ is stable.
 \item Plotting the figure of equation $x_{n+1} = x_n \ln x_n^2$ with initial
 condition $x_0 = 1.648$ slightly off the given steady state $\bar x = e^{1/2}$
 gives:
-\begin{SCfigure}[1][h]
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}[t]{0.4\linewidth}
+        \centering
+        \includegraphics[scale=0.5]{fig/fig2(d)_cob.pdf}
+        \caption{$x_{n+1}\ v.s.\ x_n$}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.4\linewidth}
+        \centering
+        \includegraphics[scale=0.5]{../fig/fig2(d).pdf}
+        \caption{$x_{n+1}\ v.s.\ n$}
+    \end{subfigure}
     \centering
     \caption{The behavior of equation $x_{n+1} = x_n \ln x_n^2$}
-    \includegraphics[scale=0.6]{../fig/fig2(d)}
-\end{SCfigure}
+\end{figure}
 \\
 We can see that the steady state is unstable. The calculation of condition:
 \[
