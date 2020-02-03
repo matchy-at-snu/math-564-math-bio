@@ -104,12 +104,13 @@ For more information about aligning equations, see [this nice document](https://
   - [ ] problem 8
   - [ ] problem 11
   - [ ] problem 16
-  - [ ] problem 17 **<- CURR.matchy**
+  - [x] problem 17 **<- CURR.matchy**
 
 ### To-dos
 
 - [ ] Improve PowerShell script
 - [ ] Improve the options part in `hw-template.cls`
+- [x] **Plot cobwebbing (non-successive)**
 
 ## Misc
 
