@@ -3,20 +3,28 @@
 \begin{enumerate}
     \item This equation is linear.
     \[
-        x_n = (1-\alpha) x_{n-1} + \beta x_n \\
-        (1 - \beta) x_n = (1 - \alpha) x_{n-1} \\
-        x_n = \frac{1 - \alpha}{1 - \beta} x_{n-1} \\
-        \lamda^2 - \frac{1 - \alpha}{1 - \beta} \lamda = 0 \\
-        \lamda_1 = 0, \lamda_2 = \frac{1 - \alpha}{1 - \beta} \\
-        x_n = c(\frac{1 - \alpha}{1 - \beta})^n \\
-        \]
+        \begin{aligned}
+        x_n &= (1-\alpha) x_{n-1} + \beta x_n \\
+        (1 - \beta) x_n &= (1 - \alpha) x_{n-1} \\
+        x_n &= \frac{1 - \alpha}{1 - \beta} x_{n-1}
+        \end{aligned}
+    \]
+    \[
+        \begin{aligned}
+        \lambda^2 - & \frac{1 - \alpha}{1 - \beta} \lambda = 0 \\
+        \lambda_1 = 0, &\quad \lambda_2 = \frac{1 - \alpha}{1 - \beta} \\
+        x_n &= c(\frac{1 - \alpha}{1 - \beta})^n \\
+        \end{aligned}
+    \]
 
     \item This equation is non-linear.
     \[
-        x_{n+1} = \frac{x_n}{1 + x_n} \\
-        x = \frac{x}{1 + x}  \\
-        x + x^2 = x \\
-        x^2 = 0 \\
+        \begin{aligned}
+        x_{n+1} &= \frac{x_n}{1 + x_n} \\
+        x &= \frac{x}{1 + x}  \\
+        x + x^2 &= x \\
+        x^2 &= 0
+        \end{aligned}
     \]
     x = 0 is a steady state.
 

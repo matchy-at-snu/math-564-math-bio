@@ -79,6 +79,7 @@
 \RequirePackage{amsmath}
 \RequirePackage{amsthm}
 \RequirePackage{amsfonts}
+\RequirePackage{mathrsfs}
 
 % For drawing picture
 \RequirePackage{tikz}
