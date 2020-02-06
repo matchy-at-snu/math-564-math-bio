@@ -1,5 +1,6 @@
 import numpy as np
 from sympy import *
+from collections import Iterable
 import matplotlib
 import matplotlib.pyplot as plt
 import os
@@ -114,38 +115,52 @@ def plot_CO2_sensitivity():
     plt.legend(["l = 0", "l = 1", "l = 2"], loc="best")
     plt.savefig(r"./fig/fig17(f).pdf")
 
-def main():
-    plot_cobwebbing_successive(
-        0.01,
-        lambda x: 2*x*(1-x),
-        0,
-        "fig2(a)(1)",
-    )
-    plot_cobwebbing_successive(
-        0.5,
-        lambda x: 0.5*x*(1-x),
-        0,
-        "fig2(a)(2)",
-    )
-    plot_cobwebbing_successive(
-        1.6,
-        lambda x: -(x**2)*(1-x),
-        (1+np.sqrt(5))/2,
-        "fig2(b)"
-    )
-    plot_cobwebbing_successive(
-        1,
-        lambda x: 1/(2+x),
-        np.sqrt(2)-1,
-        "fig2(c)",
-    )
-    plot_cobwebbing_successive(
-        1.648,
-        lambda x: x*(np.log(x*x)),
-        np.e**0.5,
-        "fig2(d)",
-    )
-    # plot_logis_lambda(2, 50)
+def plot_logis(r_val, K_val, x0, title=""):
+    plt.figure()
+    if isinstance(r_val, Iterable):
+        for r in r_val:
+            fun = lambda N: N*np.e**(r*(1- (N/K_val)))
+            x = np.arange(0, 3*K_val+1); y = [x0]
+            for i in range(3*K_val):
+                y.append(fun(y[i]))
+            plt.plot(x, y, '--o', markersize=2)
+        plt.legend([f"r = {r}" for r in r_val])
+        plt.axhline(K_val, color="magenta")
+        plt.text(2.4*K_val,1.1*K_val, f"K = {K_val}")
+    elif isinstance(K_val, Iterable):
+        for K in K_val:
+            fun = lambda N: N*np.e**(r_val*(1-(N/K)))
+            x = np.arange(0, 3*max(K_val)+1); y=[x0]
+            for i in range(3*max(K_val)):
+                y.append(fun(y[i]))
+            plt.plot(x, y, '--o', markersize=2)
+            plt.axhline(K, color="magenta")
+            plt.text(2.4*max(K_val),K+0.01*max(K_val), f"K = {K}")
+    else:
+        fun = lambda N: N*np.e**(r_val*(1-(N/K_val)))
+        x = np.arange(0, 3*K_val+1); y = [x0]
+        for i in range(3*K_val):
+            y.append(fun(y[i]))
+        if r_val <= 2:
+            plt.plot(x, y, '--o', markersize=2)
+            plt.axhline(K_val, color="magenta")
+
+        else:
+            plt.plot(x, y, '--o', color='orange', lw=0.5)
+            plt.legend([f"r = {r_val}"])
+            plt.axhline(K_val, color="magenta")
+            plt.savefig(rf"./fig/{title}_chaos{r_val}.pdf")
+            plt.figure()
+            plt.legend([f"r = {r_val}"])
+            plt.hist(y, bins=20)
+    plt.xlabel("$t$")
+    plt.ylabel("$N_t$")
+    file_name = rf"./fig/{title}.pdf"
+    if os.path.isfile(file_name):
+        os.remove(file_name)
+    plt.savefig(file_name)
 
 if __name__ == "__main__":
-    main()
+    r = np.arange(0.5, 3.5, 0.5)
+    for i in range(len(r)):
+        plot_logis(r[i], 200, 5, f"fig4(d)({i+1})")
