@@ -3,12 +3,14 @@ import matplotlib
 import matplotlib.pyplot as plt
 import operator
 matplotlib.rc('text', usetex=True)
+# --------------------------------------------------------------------------- #
+
+# Initial values
 
 S0 = 2000
 C0 = 20
 
-B_uk = 12/1000
-B_3rd = 36/1000
+B_uk = B_3rd = 72
 
 f = 0.3 *10**(-4)
 
@@ -18,14 +20,15 @@ S_3rd = [S0]
 C_uk = [C0]
 C_3rd = [C0]
 
+# --------------------------------------------------------------------------- #
 
 time = 20
 x = range(0, time+1)
 for i in range(time):
     C_uk.append(C_uk[i]*S_uk[i]*f)
-    S_uk.append(S_uk[i] - C_uk[i+1] + B_uk*(S_uk[i]+C_uk[i]))
+    S_uk.append(S_uk[i] - C_uk[i+1] + B_uk)
     C_3rd.append(C_3rd[i]*S_3rd[i]*f)
-    S_3rd.append(S_3rd[i] - C_3rd[i+1] + B_3rd*(S_3rd[i]+C_uk[i]))
+    S_3rd.append(S_3rd[i] - C_3rd[i+1] + B_3rd)
 
 
 plt.figure()
