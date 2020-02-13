@@ -102,8 +102,13 @@
 % For compile multiple files
 \RequirePackage{subfiles}
 
-% For using side-captions
-\usepackage{sidecap}
+% For formatting pictures
+\RequirePackage{sidecap}
+\RequirePackage{graphicx}
+\RequirePackage{subcaption}
+
+% For better curly character presentation
+\RequirePackage{BOONDOX-cal}
 
 % -----------------------------------------------------------------------------%
 
