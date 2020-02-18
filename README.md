@@ -2,7 +2,7 @@
 
 Homework repository for [MATH564 MATH MODELING](https://www.coursicle.com/unc/courses/MATH/564/) @ [UNC-Chapel Hill](https://www.unc.edu/)
 
-I'll probably extend this repo to a solution manual + concise notes to the book _[Mathematical Models in Biology](https://epubs.siam.org/doi/book/10.1137/1.9780898719147?mobileUi=0%27)_, also probably will make a GitHub Pages for displaying this project. Not decided yet (2/2/2020)
+I'll probably extend this repo to a solution manual + concise notes to the book _[Mathematical Models in Biology](https://epubs.siam.org/doi/book/10.1137/1.9780898719147?mobileUi=0%27)_, also probably will make a GitHub Page for displaying this project. Not decided yet (2/2/2020)
 
 ## File structure
 
@@ -97,21 +97,14 @@ For more information about aligning equations, see [this nice document](https://
 ### Homework Progress
 
 - [x] homework 1
-- [ ] homework 2
-  - [ ] problem 1
-  - [x] problem 2 
-  - [x] problem 4
-  - [ ] problem 8
-  - [ ] problem 11
-  - [ ] problem 16
-  - [x] problem 17 **<- CURR.matchy**
+- [x] homework 2
 
 ### To-dos
 
 - [ ] Improve PowerShell script
+- [ ] Add MakeFile and Unix Shell version of the PS1 script
 - [ ] Improve the options part in `hw-template.cls`
-- [x] **Plot cobwebbing (non-successive)**
 
 ## Misc
 
-Suggestions are welcome! Raise an issue or shoot me an email.
+Suggestions are welcome! Raise an issue or shoot me an email at `matchy9808@gmail.com`.
