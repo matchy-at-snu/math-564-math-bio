@@ -5,27 +5,27 @@
     
     \item 
     \begin{align*}
-        N_{t+1} = \lambda N_{t} e^{-(aP_t)^{1-m}}\\
-        P_{t+1} = N_t (1 - e^{-(aP_t)^{1-m}})
+        N_{t+1} &= \lambda N_{t} e^{-(aP_t)^{1-m}}\\
+        P_{t+1} &= N_t (1 - e^{-(aP_t)^{1-m}})
     \end{align*}
     
     \item
     Since m represents a decrease in search efficiency for the parasites due to large density, introducing this parameter allows lower $q$ values, thus, more elevated stable states. Lower $q$ values also allow the system to be stable with a wide range of r values. 
     
     Steady State Analysis: \begin{align*}
-        \bar{N} = \lambda \bar{N} (e^{a\bar{P}}^{1-m})\\
-        \bar{P} = \bar{N} (1 - e^{-(a\bar{P})^{1-m}})
+        \bar{N} &= \lambda \bar{N} (\exp(a\bar{P}^{1-m}))\\
+        \bar{P} &= \bar{N} (1 - \exp(-(a \bar{P})^{1-m}))
     \end{align*}
     Solving for $\bar{N}$ and $\bar{P}$, \begin{align*}
-        \bar{P} = \frac{ln(\lambda)^{\frac{1}{1-m}}}{a}\\
-        \bar{N} = \frac{\bar{P}}{1-\lambda}
+        \bar{P} &= \frac{ln(\lambda)^{\frac{1}{1-m}}}{a}\\
+        \bar{N} &= \frac{\bar{P}}{1-\lambda}
     \end{align*}
     Taking the partial derivatives for stability analysis, \begin{align}
-        a_{11} = 1 \\
-        a_{12} = -\frac{\lambda^2}{\lambda - 1}ln(\lambda)(1-m) \\
-        a_{21} = \frac{\lambda - 1}{\lambda} \\
-        a_{22} = \frac{ln(\lambda)}{1-m}\frac{\lambda}{\lambda-1}\\
-        \gamma = a_{11}a_{22}-a_{12}a_{21} = ln\lambda (1-m)(\lambda + \frac{1}{\lambda -1 })
+        a_{11} &= 1 \\
+        a_{12} &= -\frac{\lambda^2}{\lambda - 1}ln(\lambda)(1-m) \\
+        a_{21} &= \frac{\lambda - 1}{\lambda} \\
+        a_{22} &= \frac{ln(\lambda)}{1-m}\frac{\lambda}{\lambda-1}\\
+        \gamma &= a_{11}a_{22}-a_{12}a_{21} = ln\lambda (1-m)(\lambda + \frac{1}{\lambda -1 })
     \end{align}
     Introducing m, thus, makes $\gamma$ smaller and creates a more stable steady state.
     

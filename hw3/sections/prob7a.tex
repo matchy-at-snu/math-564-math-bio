@@ -1,17 +1,17 @@
-\begin{homeworkProblem}[7(a)]
+\begin{homeworkProblem}[7][(a)]
 
 \begin{align*}
-    N_{t+1} = \lambda N_{t} e^{-aP_t}\\
-    P_{t+1} = c N_{t} (1 - e^{-aP_t})\\
+    N_{t+1} &= \lambda N_{t} e^{-aP_t}\\
+    P_{t+1} &= c N_{t} (1 - e^{-aP_t})\\
 \end{align*}
     Plug in $ n_t = acN_t $ and $ p_t = aP_t $ , \\
     \begin{align*}
-        \frac{n_{t+1}}{ac} = \lambda \frac{n_t}{ac} e^{-a\frac{p_t}{a}}\\
-        \frac{p_{t+1}}{a} = c\frac{n_t}{ac} (1 - e^{-a\frac{p_t}{a}}) 
+        \frac{n_{t+1}}{ac} &= \lambda \frac{n_t}{ac} e^{-a\frac{p_t}{a}}\\
+        \frac{p_{t+1}}{a} &= c\frac{n_t}{ac} (1 - e^{-a\frac{p_t}{a}}) 
     \end{align*}
     After canceling $a$ and $c$, the equations look like \begin{align*}
-        n_{t+1} = \lambda n_t e^{-p_t} \\
-        p_{t+1} = n_t (1 - e^{-p_t})
+        n_{t+1} &= \lambda n_t e^{-p_t} \\
+        p_{t+1} &= n_t (1 - e^{-p_t})
     \end{align*}
     There are only one parameter, $\lambda$, in this system of equations.
 \end{homeworkProblem}
