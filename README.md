@@ -2,8 +2,7 @@
 
 Homework repository for [MATH564 MATH MODELING](https://www.coursicle.com/unc/courses/MATH/564/) @ [UNC-Chapel Hill](https://www.unc.edu/)
 
-I'll probably extend this repo to a solution manual + concise notes to the book _[Mathematical Models in Biology](https://epubs.siam.org/doi/book/10.1137/1.9780898719147?mobileUi=0%27)_, also probably will make a GitHub Page for displaying this project. Not decided yet (2/2/2020)
-
+I'll probably extend this repo to a solution manual + concise notes to the book _[Mathematical Models in Biology](https://epubs.siam.org/doi/book/10.1137/1.9780898719147?mobileUi=0%27)_.
 ## File structure
 
 ```PowerShell
@@ -98,6 +97,7 @@ For more information about aligning equations, see [this nice document](https://
 
 - [x] homework 1
 - [x] homework 2
+- [x] homework 3
 
 ### To-dos
 
@@ -107,4 +107,4 @@ For more information about aligning equations, see [this nice document](https://
 
 ## Misc
 
-Suggestions are welcome! Raise an issue or shoot me an email at `matchy9808@gmail.com`.
+Suggestions are welcome!
