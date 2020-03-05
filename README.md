@@ -101,7 +101,8 @@ For more information about aligning equations, see [this nice document](https://
 
 ### To-dos
 
-- [x] Improve PowerShell script
+- [x] Improve PowerShell script: directory creation automation
+- [ ] Improve PowerShell script: `.tex` file creation improvement
 - [ ] Add MakeFile and Unix Shell version of the PS1 script
 - [ ] Improve the options part in `hw-template.cls`
 
