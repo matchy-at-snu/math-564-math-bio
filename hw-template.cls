@@ -125,7 +125,7 @@
 \RequirePackage{etoolbox}
 
 
-% Background color designed for dart highlighting style
+% Background color designed for dark highlighting style
 \definecolor{bg}{HTML}{282828}
 
 
