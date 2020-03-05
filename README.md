@@ -101,7 +101,7 @@ For more information about aligning equations, see [this nice document](https://
 
 ### To-dos
 
-- [ ] Improve PowerShell script
+- [x] Improve PowerShell script
 - [ ] Add MakeFile and Unix Shell version of the PS1 script
 - [ ] Improve the options part in `hw-template.cls`
 
