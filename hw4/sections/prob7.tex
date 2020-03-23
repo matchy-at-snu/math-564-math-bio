@@ -1,0 +1,47 @@
+
+\begin{homeworkProblem}[7]
+\begin{enumerate}
+    \item 
+    if $K(C) = \frac{K_{max}}{K_n + C}$ \\
+    Plug in \begin{align*}
+        C = K_n \\
+    K(C) = \frac{K_n K_{max}}{2K_n} \\
+        = \frac{K_{max}}{2}
+    \end{align*}
+    
+    \item
+    if $K(C) = \frac{K_{max}}{K_n + C}$ \\
+    let \begin{align*}
+        t = t^* \tau \\
+        \tau = \frac{V}{F} \\
+        N = N^*\hat{N} \\
+        \hat{N} = \frac{K_m}{\alpha\tau K_{max}} \\
+        C = C^* \hat{C} \\
+        \hat{C} =  \frac{1}{K_m}
+    \end{align*}
+    The system of equations turns into the dimensionless system: \begin{align*}
+        \frac{dN}{dt} = a_1 CN -N \\
+        \frac{dC}{dt} = -CN -C +a_2
+        \end{align*}
+        where $a_1 = \tau = \frac{V}{F}$ and $a_2 = C_0K_m$.
+    After setting the two derivatives to zero, the steady states $\Bar{N_1}, \Bar{C_1}$ are \begin{align*}
+        (0, a_2)\\
+        (a_1a_2+1, \frac{a_2}{a_1a_2+2})
+    \end{align*}
+    As we can see, the "boring" steady state remains the same, while the other solution is different.
+    
+    \item
+    The Jacobian of the system is 
+    $$\begin{matrix}
+    \frac{a_1a_2}{a_1a_2+2} & a_1(a_1a_2+2) \\
+    -\frac{a_2}{a_1a_2+2} & -a_1a_2-2 
+    \end{matrix}$$
+    $\lambda = -a_1a_2 = -\frac{V}{F}\frac{C_0}{K_m} < 0 $, thus, the steady state will always be unstable.
+
+
+
+
+    
+\end{enumerate}
+
+\end{homeworkProblem}
