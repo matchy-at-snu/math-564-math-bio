@@ -3,6 +3,7 @@
 Homework repository for [MATH564 MATH MODELING](https://www.coursicle.com/unc/courses/MATH/564/) @ [UNC-Chapel Hill](https://www.unc.edu/)
 
 I'll probably extend this repo to a solution manual + concise notes to the book _[Mathematical Models in Biology](https://epubs.siam.org/doi/book/10.1137/1.9780898719147?mobileUi=0%27)_.
+
 ## File structure
 
 ```PowerShell
@@ -98,12 +99,13 @@ For more information about aligning equations, see [this nice document](https://
 - [x] homework 1
 - [x] homework 2
 - [x] homework 3
+- [ ] homework 4
 
 ### To-dos
 
 - [x] Improve PowerShell script: directory creation automation
 - [ ] Improve PowerShell script: `.tex` file creation improvement
-- [ ] Add MakeFile and Unix Shell version of the PS1 script
+- [ ] Add MakeFile and Unix Shell version of the PS1 script (or just use bash, since we have WSL for windows)
 - [ ] Improve the options part in `hw-template.cls`
 
 ## Misc

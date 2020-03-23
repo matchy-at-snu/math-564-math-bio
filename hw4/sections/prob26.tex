@@ -1,0 +1,40 @@
+\begin{homeworkProblem}[26][Insulin-Glucose Regulation]
+Equations \eqref{eq:insulin} and \eqref{eq:glucose} due to Boile (1960) are a
+simple model for insulin-mediated glucose homeostasis.
+\begin{equation}
+    V \deriv[t]{X} = \dot{I} - F_1(X) + F_2(Y), \label{eq:insulin}
+\end{equation}
+\begin{equation}
+    V \deriv[t]{Y} = \dot{G} - F_3(X, Y) - F_4(X, Y), \label{eq:glucose}
+\end{equation}
+where
+\begin{table}[h!]
+\centering
+\begin{tabular}{c c|c|c}
+\textbf{Table 1} &
+\multicolumn{3}{|c|}{Variables in Bolie's (1960) Model for Insulin-Glucose Regulation }\\
+\hline
+& Symbol & Definition & Dimensions \\
+\hline
+& $V$ & Extracellular fluid volume & Volume \\
+& $\dot{I}$ & Rate of insulin injection & Units/time \\
+& $\dot{G}$ & Rate of glucose injection & Mass/time \\
+& $X(t)$ & Extracellular insulin concentration & Units/volume \\
+& $Y(t)$ & Extracellular glucose concentration & Units/volume \\
+& $F_1(X)$ & Rate of degradation of insulin & (placeholder) \\
+& $F_2(Y)$ & Rate of production of insulin & (placeholder) \\
+& $F_3(X, Y)$ & Rate of liver accumulation of glucose & (placeholder) \\
+& $F_4(X, Y)$ & Rate of tissue utilization of glucose & (placeholder) \\
+\hline
+\end{tabular}
+\end{table}
+The following questions are a guide to investigate this model.
+\begin{enumerate}
+\item When neither component is injected in normal, healthy individuals, the
+blood glucose and insulin levels are regulated to within fairly restricted
+concentration ranges. What does this imply about equations \eqref{eq:insulin}
+and \eqref{eq:glucose}?
+If neither component is injected, this implies $\dot{I}$ and $\dot{G}$ are both 0.
+
+\end{enumerate}
+\end{homeworkProblem}
