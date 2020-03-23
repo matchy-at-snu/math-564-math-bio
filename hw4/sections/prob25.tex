@@ -1,3 +1,59 @@
+
 \begin{homeworkProblem}[25]
-    test
+\begin{enumerate}
+    \item
+    Assume that tumor cells grow exponentially, or $\frac{dN}{dt} = aN $, and that effect of the drug follows Michaelis-Menten kinetics, we have the following system of equations: \begin{align*}
+        \frac{dN}{dt} = \frac{aN}{V} - \frac{K_{max}C}{K_n + C}N \\
+        \frac{dC}{dt} = \frac{F}{V}C_0 - \frac{u}{v}C - \alpha\frac{K_{max}C}{K_n +C}N \\
+    \end{align*}
+    where $\alpha K(C) N$ is the drug intake by the cells.
+    
+    \item
+    let \begin{align*}
+        t = t^* \tau \\
+        \tau = \frac{V}{a} \\
+        N = N^*\hat{N} \\
+        \hat{N} = \frac{K_n}{V K_{max \alpha}} \\
+        C = C^* \hat{C} \\
+        \hat{C} =  K_n
+    \end{align*}
+    After assigning units to $N,C,t$, we arrive at the following dimensionless system of equations: \begin{align}
+        N - a_1 \frac{C}{1+C}N \\
+        a_2 - a_3 C - \frac{C}{1+C}N 
+    \end{align}
+    where $a_1 = \frac{V}{a}K_{max}$, $a_2 = \frac{C_0F}{K_na}$, and $a_3 = \frac{u}{a}$.
+    Thus, we know that the dimensionless quantity $\frac{C}{a+C}$ is important.
+    
+    \item
+    The system's Jacobian is \begin{matrix}
+    0 & -\frac{(a_1 - 1)^2}{a_1} a_1 \\
+    \frac{1}{a_1} & -a_3 -\frac{(a_1 - 1)^2}{a_1}
+    \end{matrix} \\
+    As long as $a_3 > 0, a_1 > 0$, $\lambda > 0, \beta < 0$, and the system is stable.
+    
+    \item
+    $a_1 = \frac{V}{a}K_{max}$ is a combination of positive unit-carrying values, so $a_1 > 0$. $a_3 > 0$ meaning $u$ and $a$, the reproduction rate of cancer cells and the blood flow rate away from the site have same signs, which in this context, they should be both positive. 
+    
+    \item
+    \begin{align*}
+        \gamma = \frac{1}{N}\frac{dN}{dt} \\
+        \int \gamma = \int {-\frac{1}{\alpha}\frac{d\gamma}{dt}} = \int \frac{1}{N}\frac{dN}{dt} \\
+        -\frac{\gamma}{\alpha} = ln(N) \\
+        \gamma = -\alpha ln(N) \\
+        \frac{dN}{dt} = \gamma N = -\alpha ln(N) N
+    \end{align*}
+    Solving $\gamma$'s differential equation, \begin{align*}
+        \int \frac{1}{\gamma}dt = \int -\alpha dt \\
+        ln(\gamma) = -\alpha \gamma \\
+        \gamma = \gamma_{0}e^{-\alpha t}
+    \end{align*}
+    
+    \item
+    if $\alpha$ increases with $C$, let $pC = $ rate which $\alpha$ changes with regard to $C$ (assume linear relationship), and $p>1$. Thus, the original system can be written as the new system of equations: \begin{align*}
+        \frac{dN}{dt} = -\frac{pCln(N)N}{V} - \frac{K_{max}C}{K_n + C}N \\
+        \frac{dC}{dt} = \frac{F}{V}C_0 - \frac{u}{v}C - \alpha\frac{K_{max}C}{K_n +C}N 
+    \end{align*}
+    
+    
+\end{enumerate}
 \end{homeworkProblem}
