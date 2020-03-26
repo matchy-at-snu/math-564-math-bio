@@ -1,14 +1,16 @@
 
 \begin{homeworkProblem}[25]
 \begin{enumerate}
-    \item
+\addtocounter{enumi}{1}
+\item[\color{red}\theenumi.]
     Assume that tumor cells grow exponentially, or $\frac{dN}{dt} = aN $, and that effect of the drug follows Michaelis-Menten kinetics, we have the following system of equations: \begin{align*}
         \frac{dN}{dt} = \frac{aN}{V} - \frac{K_{max}C}{K_n + C}N \\
         \frac{dC}{dt} = \frac{F}{V}C_0 - \frac{u}{v}C - \alpha\frac{K_{max}C}{K_n +C}N \\
     \end{align*}
     where $\alpha K(C) N$ is the drug intake by the cells.
     
-    \item
+\addtocounter{enumi}{1}
+\item[\color{red}\theenumi.]
     let \begin{align*}
         t = t^* \tau \\
         \tau = \frac{V}{a} \\
@@ -24,11 +26,12 @@
     where $a_1 = \frac{V}{a}K_{max}$, $a_2 = \frac{C_0F}{K_na}$, and $a_3 = \frac{u}{a}$.
     Thus, we know that the dimensionless quantity $\frac{C}{a+C}$ is important.
     
-    \item
-    The system's Jacobian is \begin{matrix}
+\addtocounter{enumi}{1}
+\item[\color{red}\theenumi.]
+    The system's Jacobian is $$\begin{bmatrix}
     0 & -\frac{(a_1 - 1)^2}{a_1} a_1 \\
     \frac{1}{a_1} & -a_3 -\frac{(a_1 - 1)^2}{a_1}
-    \end{matrix} \\
+    \end{bmatrix}$$
     As long as $a_3 > 0, a_1 > 0$, $\lambda > 0, \beta < 0$, and the system is stable.
     
     \item
@@ -53,7 +56,6 @@
         \frac{dN}{dt} = -\frac{pCln(N)N}{V} - \frac{K_{max}C}{K_n + C}N \\
         \frac{dC}{dt} = \frac{F}{V}C_0 - \frac{u}{v}C - \alpha\frac{K_{max}C}{K_n +C}N 
     \end{align*}
-    
     
 \end{enumerate}
 \end{homeworkProblem}
