@@ -8,11 +8,11 @@ simple model for insulin-mediated glucose homeostasis.
     V \deriv[t]{Y} = \dot{G} - F_3(X, Y) - F_4(X, Y), \label{eq:glucose}
 \end{equation}
 where
-\begin{table}[h!]
+\begin{table}[h]
 \centering
 \begin{tabular}{c c|c|c}
 \textbf{Table 1} &
-\multicolumn{3}{|c|}{Variables in Bolie's (1960) Model for Insulin-Glucose Regulation }\\
+\multicolumn{3}{c}{Variables in Bolie's (1960) Model for Insulin-Glucose Regulation }\\
 \hline
 & Symbol & Definition & Dimensions \\
 \hline
@@ -21,20 +21,154 @@ where
 & $\dot{G}$ & Rate of glucose injection & Mass/time \\
 & $X(t)$ & Extracellular insulin concentration & Units/volume \\
 & $Y(t)$ & Extracellular glucose concentration & Units/volume \\
-& $F_1(X)$ & Rate of degradation of insulin & (placeholder) \\
-& $F_2(Y)$ & Rate of production of insulin & (placeholder) \\
-& $F_3(X, Y)$ & Rate of liver accumulation of glucose & (placeholder) \\
-& $F_4(X, Y)$ & Rate of tissue utilization of glucose & (placeholder) \\
+& $F_1(X)$ & Rate of degradation of insulin & {\color{blue} See prob(b)} \\
+& $F_2(Y)$ & Rate of production of insulin & {\color{blue} See prob(b)} \\
+& $F_3(X, Y)$ & Rate of liver accumulation of glucose & {\color{blue} See prob(b)} \\
+& $F_4(X, Y)$ & Rate of tissue utilization of glucose & {\color{blue} See prob(b)} \\
 \hline
 \end{tabular}
 \end{table}
 The following questions are a guide to investigate this model.
 \begin{enumerate}
-\item When neither component is injected in normal, healthy individuals, the
+\item \textbf{When neither component is injected in normal, healthy individuals, the
 blood glucose and insulin levels are regulated to within fairly restricted
 concentration ranges. What does this imply about equations \eqref{eq:insulin}
-and \eqref{eq:glucose}?
-If neither component is injected, this implies $\dot{I}$ and $\dot{G}$ are both 0.
+and \eqref{eq:glucose}?}\\
+
+It means these two equations have at least one stable steady states $X_0$ and $Y_0$.
+\\
+
+\item \textbf{Explain the meaning of the factor $V$ on the LHS of equations \eqref{eq:insulin} and \eqref{eq:glucose}. What are the dimensions of the functions $F_1$, $F_2$, $F_3$ and $F_4$?}\\
+
+The formulas on both sides of each equation should have the same dimension. For \eqref{eq:glucose}, we know that:\begin{itemize}
+    \item $\deriv[t]{X}$ and $\deriv[t]{Y}$ both have dimension Units/(volume$\times$time)
+    \item $\dot I$ has dimension units/time
+    \item $\dot G$ has dimension mass/time
+\end{itemize}
+So, to make the dimensions consistent, we need to multiply $\deriv[t]{X}$ and $\deriv[t]{Y}$ by factor $V$ (which is, trivially, of dimension volume).
+
+And we can easily deduce by dimension consistency that \begin{itemize}
+    \item $F_1(X)$ and $F_2(Y)$ both have dimension units/volume
+    \item $F_3(X, Y)$ and $F_4(X,Y)$ both have dimension mass/volume
+\end{itemize}
+
+Personally speaking I think there's a mistake in the dimension of $\deriv[t]{Y}$ provided in \textbf{Table 1}, since $\dot G$ has dimension mass/time but $V\deriv[t]{Y}$ has dimension units/time, which are still not consistent.
+
+\pagebreak
+
+% prob (c)
+\item \textbf{Bolie defines $X_0$ and $Y_0$ as the mean equilibrium levels of insulin and glucose when none is being injected into the body. What equations do $X_0$ and $Y_0$ satisfy?}\\
+
+If neither component is injected, this implies $\dot{I}$ and $\dot{G}$ are both 0. And the formula degenerates into the form of 
+\begin{equation}
+    V \deriv[t]{X} = F_2(Y) - F_1(X)
+\end{equation}
+\begin{equation}
+    V \deriv[t]{Y} = - F_3(X, Y)-F_4(X,Y)
+\end{equation}
+Observe at the steady state ($X = X_0$ and $Y = Y_0$), i.e. $\deriv[t]{X} = 0$ and $\deriv[t]{Y} = 0$, we'll have 
+\begin{equation}
+    F_1(X_0) = F_2(Y_0)
+\end{equation}
+\begin{equation}
+    F_3(X_0, Y_0) = - F_4(X_0, Y_0)
+\end{equation}
+\\
+
+% prob (d)
+\item \textbf{Consider the following four parameters: \[
+    \begin{matrix}
+        \alpha = \frac{1}{V}\left(\pderiv{F_1}{X}\right), & \beta = \frac{1}{V}\left(\pderiv{F_2}{Y}\right),\\
+        \\
+        \gamma = \frac{1}{V}\left(\pderiv{F_3}{X} + \pderiv{F_4}{X}\right), & \delta = \frac{1}{V}\left(\pderiv{F_3}{Y} + 
+        \pderiv{F_4}{Y}\right)
+    \end{matrix}
+\]
+[Partial derivatives are evaluated at $(X_0, Y_0)$.]\\
+Interpret what these represent and comment on the fact that these are assumed to be positive constants.}\\
+
+
+\addtocounter{enumi}{1}
+% prob (e)
+\item[\color{red}\theenumi.] \textbf{Suppose that $\dot I = \dot G = 0$, but that at time $t = 0$ a rapid ingestion of glucose followed by a single insulin injection changes the internal concentrations to \[
+    X = X_0+x', \quad Y = Y_0+y'
+\]
+where $x', y'$ are small compared to $X_0, Y_0$. Discuss waht you expect to happen and how it depends on the parameters $\alpha$, $\beta$, $\gamma$ and $\delta$.}\\
+
+Rewrite the system to be in the form of 
+\begin{equation}
+    \deriv[t]{X} = \frac{1}{V}\left( - F_1(X) + F_2(Y)\right) \label{eq:derivX}
+\end{equation}
+\begin{equation}
+    \deriv[t]{Y} = \frac{1}{V}\left(- F_3(X, Y) - F_4(X, Y)\right) \label{eq:derivY}
+\end{equation}
+Note that we omitted $\dot I$ and $\dot G$, since this subproblem asked us to explore the meaning of $\alpha$, $\beta$, $\gamma$ and $\delta$, which are 4 terms evaluated at $X_0, Y_0$, representing the steady-states without injections.
+Consider steady-state solutions $X_0$ and $Y_0$, they can make $F_2(Y_0) - F_1(X_0) = 0$ and $ F_3 (X_0, Y_0) + F_4(X_0, Y_0) = 0$.
+Consider the close-to-steady-state solutions:
+\begin{equation}
+    X(t) = X_0 + x'(t),
+\end{equation}
+\begin{equation}
+     Y(t) = Y_0 + y'(t).
+\end{equation}
+with $x(t)$ and $y(t)$ as the perturbations of the steady state.
+By making substitution into \eqref{eq:derivX} and \eqref{eq:derivY}, we have 
+\begin{equation}
+    \derivlong[t]{X_0 + x'} = \frac{1}{V}(-F_1(X_0+x') + F_2(Y_0+y'))
+\end{equation}
+\begin{equation}
+    \derivlong[t]{Y_0 + y'} = \frac{1}{V}(-F_3(X_0+x', Y_0+y') - F_4(X_0+x', Y_0+y'))
+\end{equation}
+For convenience, we'll use $\mathcal{F}(X, Y)$ to denote $\frac{1}{V}(-F_1(X) + F_2(Y))$; and $\mathcal{G}(X, Y)$ to denote $\frac{1}{V}(-F_3(X,Y)-F_4(X,Y))$
+We can expand the derivation on LHS and perform Taylor expansion about the point $(X_0, Y_0)$, we can get that:
+\begin{equation}
+\begin{split}
+    \deriv[t]{x} = \mathcal{F}(X_0, Y_0) + \mathcal{F}_x(X_0, Y_0) \cdot x + \mathcal{F}_y(X_0, Y_0) \cdot y +\\
+    \text{ terms of order }x^2, y^2, xy\text{ and higher}
+\end{split}
+\end{equation}
+\begin{equation}
+\begin{split}
+    \deriv[t]{y} = \mathcal{G}(X_0, Y_0) + \mathcal{G}_x(X_0, Y_0) \cdot x + \mathcal{G}_y(X_0, Y_0) \cdot y +\\
+    \text{ terms of order }x^2, y^2, xy\text{ and higher}
+\end{split}
+\end{equation}
+We can clearly see that, \[
+\begin{matrix}
+\alpha = -\mathcal{F}_x(X_0,Y_0), & \beta = \mathcal{F}_y(X_0, Y_0),\\
+\gamma = -\mathcal{G}_x(X_0,Y_0), & \delta = -\mathcal{G}_y(X_0, Y_0)
+\end{matrix}
+\]
+So we can see that the changing rate of $x$ and $y$ can be write in the form of depending on $\alpha$, $\beta$, $\gamma$ and $\delta$:
+\begin{equation}
+        \deriv[t]{x} = -\alpha + \beta
+\end{equation}
+\begin{equation}
+    \deriv[t]{y} = -\gamma - \delta
+\end{equation}\\
+
+\addtocounter{enumi}{1}
+% prob (f)
+\item[\color{red}\theenumi.] \textbf{By extrapolating empirical data for canines to the body mass of a human, Bolie suggests the values \[
+    \begin{matrix}
+        \alpha = 0.8 \text{hr}^{-1}, & \gamma = 4.8\text{g}\cdot\text{hr}^{-1}\text{unit}^{-1}\\
+        \beta = 0.3 \text{unit}\cdot\text{hr}\cdot\text{g}^{-1}, & \delta = 3.2 \text{hr}^{-1}
+    \end{matrix}
+\]
+Are these values consistent with a stable equilibrium?}\\
+
+To have a stable equilibrium, we need to make $\det(Jacobian) > 0$ and $\text{Tr}(Jacobian) < 0$, we know from (e) that the Jacobian would be: \[
+    Jacobian = \begin{bmatrix}
+        -\alpha & \beta \\
+        -\gamma & -\delta
+    \end{bmatrix}
+\]
+It's trivial that the trace is negative\[
+    \text{Tr}(Jacobian) = (-\alpha) + (-\delta) =  -4.0 < 0
+\]
+And the determinant is also trivially larger than 0\[
+    \det(Jacobian) = (-\alpha)(-\delta) - \beta(-\gamma) = 4.0 >0
+\]
 
 \end{enumerate}
 \end{homeworkProblem}
